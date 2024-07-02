@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_4sdp"
+    android:background="@drawable/shape_white"
+    android:elevation="@dimen/_4sdp"
+    android:padding="@dimen/_8sdp">
+
+    <TextView
+        android:id="@+id/itemCategory_tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_4sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:gravity="center"
+        tools:text="April 02, 15:48"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/itemCategory_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:gravity="center"
+        android:text="New Notification"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemCategory_tv_time" />
+
+    <TextView
+        android:id="@+id/itemCategory_tv_body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:text="notification message message message message message message message message message message message message"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemCategory_tv_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

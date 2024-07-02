@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "156325407069",
+    "project_id": "tahoon-test",
+    "storage_bucket": "tahoon-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156325407069:android:8819652542730da6be20b4",
+        "android_client_info": {
+          "package_name": "eramo.tahoon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhyobh6gptKR2rwtLNoDMpwpJe5vneB00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

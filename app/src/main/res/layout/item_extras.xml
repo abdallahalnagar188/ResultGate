@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_4sdp"
+    android:paddingHorizontal="@dimen/_8sdp"
+    android:paddingTop="@dimen/_4sdp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="product name "
+        android:fontFamily="@font/ibmplexsansregular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        />
+
+    <TextView
+        android:id="@+id/tv_unit_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="unite price"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tv_unit_price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view_divider"
+        android:layout_marginBottom="@dimen/_10sdp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_minus"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_weight="1"
+            android:background="@color/eramo_color"
+            android:contentDescription="@null"
+            android:padding="@dimen/_6sdp"
+            android:src="@drawable/ic_minus"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/stroke_blue"
+            android:fontFamily="@font/ibmplexsansregular"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_8sdp"
+            android:text="@string/_1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <ImageView
+            android:id="@+id/iv_plus"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_weight="1"
+            android:background="@color/eramo_color"
+            android:contentDescription="@null"
+            android:padding="@dimen/_6sdp"
+            android:src="@drawable/ic_plus"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_cost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+        tools:text="10000 EGP"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:fontFamily="@font/ibmplexsansbold"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/eramo_color"
+        />
+
+    <View
+        android:id="@+id/view_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha="0.33"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/gray"
+        android:layout_marginHorizontal="@dimen/_2sdp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

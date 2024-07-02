@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/_110sdp"
+    android:layout_height="@dimen/_110sdp"
+    android:layout_margin="@dimen/_4sdp"
+    android:background="@drawable/shape_white_with_boarder"
+    android:elevation="@dimen/_4sdp"
+    android:padding="@dimen/_4sdp">
+
+    <ImageView
+        android:id="@+id/itemCategory_iv"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:contentDescription="@null"
+        android:padding="@dimen/_4sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pic_midea" />
+
+    <TextView
+        android:id="@+id/itemCategory_tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_4sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:gravity="center"
+        tools:text="Category Name mohab sdsdsdssdds"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemCategory_iv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

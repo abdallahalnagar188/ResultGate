@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="eramo.tahoon.presentation.ui.navbottom.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="eramo.tahoon.presentation.ui.navbottom.ShopFragment"
+        tools:layout="@layout/fragment_shop">
+        <argument
+            android:name="categoryId"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="FilterSubCategoryProducts"
+            android:defaultValue="@null"
+            app:argType="eramo.tahoon.domain.model.FilterSubCategoryProductsObject"
+            app:nullable="true" />
+        <argument
+            android:name="brandId"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="eramo.tahoon.presentation.ui.navbottom.CartFragment"
+        tools:layout="@layout/fragment_cart" />
+
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="eramo.tahoon.presentation.ui.navbottom.extension.ProductDetailsFragment"
+        tools:layout="@layout/fragment_product_details">
+        <deepLink
+            android:id="@+id/deepLink"
+            android:autoVerify="true"
+            app:uri="https://www.eramoerp.com/product/{productId}" />
+        <argument
+            android:name="productId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/editPersonalDetailsFragment"
+        android:name="eramo.tahoon.presentation.ui.drawer.myaccount.EditPersonalDetailsFragment"
+        tools:layout="@layout/fragment_edit_personal_details">
+        <argument
+            android:name="memberModel"
+            app:argType="eramo.tahoon.data.remote.dto.general.Member" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="eramo.tahoon.presentation.ui.drawer.myaccount.ChangePasswordFragment"
+        tools:layout="@layout/fragment_change_password">
+        <argument
+            android:name="memberModel"
+            app:argType="eramo.tahoon.data.remote.dto.general.Member" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/myAccountFragment"
+        android:name="eramo.tahoon.presentation.ui.drawer.myaccount.MyAccountFragment"
+        tools:layout="@layout/fragment_my_account" />
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="eramo.tahoon.presentation.ui.drawer.ContactUsFragment"
+        tools:layout="@layout/fragment_contact_us">
+        <argument
+            android:name="productId"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="eramo.tahoon.presentation.ui.drawer.AboutUsFragment"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="eramo.tahoon.presentation.ui.drawer.FavouriteFragment"
+        tools:layout="@layout/fragment_favourite" />
+
+    <dialog
+        android:id="@+id/loginDialog"
+        android:name="eramo.tahoon.presentation.ui.dialog.LoginDialog"
+        android:label="LoginDialog"
+        tools:layout="@layout/dialog_login">
+        <argument
+            android:name="proceedRequire"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </dialog>
+    <fragment
+        android:id="@+id/checkoutStepOneFragment"
+        android:name="eramo.tahoon.presentation.ui.checkout.CheckoutStepOneFragment"
+        android:label="CheckoutStepOneFragment"
+        tools:layout="@layout/fragment_checkout_step_one">
+        <argument
+            android:name="taxes"
+            android:defaultValue="0.0"
+            app:argType="float" />
+        <argument
+            android:name="shipping"
+            android:defaultValue="0.0"
+            app:argType="float" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/promoCodeDialog"
+        android:name="eramo.tahoon.presentation.ui.dialog.PromoCodeDialog"
+        android:label="PromoCodeDialog"
+        tools:layout="@layout/dialog_promo_code" />
+    <fragment
+        android:id="@+id/checkoutStepTwoFragment"
+        android:name="eramo.tahoon.presentation.ui.checkout.CheckoutStepTwoFragment"
+        android:label="CheckoutStepTwoFragment"
+        tools:layout="@layout/fragment_checkout_step_two">
+        <argument
+            android:name="total"
+            app:argType="float" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkoutStepThreeFragment"
+        android:name="eramo.tahoon.presentation.ui.checkout.CheckoutStepThreeFragment"
+        android:label="CheckoutStepThreeFragment"
+        tools:layout="@layout/fragment_checkout_step_three" />
+    <fragment
+        android:id="@+id/myOrdersFragment"
+        android:name="eramo.tahoon.presentation.ui.drawer.myaccount.order.MyOrdersFragment"
+        android:label="MyOrdersFragment"
+        tools:layout="@layout/fragment_my_orders" />
+    <fragment
+        android:id="@+id/orderDetailsFragment"
+        android:name="eramo.tahoon.presentation.ui.drawer.myaccount.order.OrderDetailsFragment"
+        android:label="OrderDetailsFragment"
+        tools:layout="@layout/fragment_order_details">
+
+        <argument
+            android:name="orderId"
+            app:argType="string" />
+        <argument
+            android:name="notification_id"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <dialog
+        android:id="@+id/cancelDialog"
+        android:name="eramo.tahoon.presentation.ui.dialog.CancelDialog"
+        android:label="CancelDialog"
+        tools:layout="@layout/dialog_cancel">
+        <argument
+            android:name="orderId"
+            app:argType="string" />
+    </dialog>
+    <fragment
+        android:id="@+id/allCategoryFragment"
+        android:name="eramo.tahoon.presentation.ui.navbottom.extension.AllCategoryFragment"
+        android:label="AllCategoryFragment"
+        tools:layout="@layout/fragment_all_category">
+
+        <argument
+            android:name="brandId"
+            app:argType="string"
+            android:defaultValue="@null"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="eramo.tahoon.presentation.ui.navbottom.extension.FilterFragment"
+        android:label="FilterFragment"
+        tools:layout="@layout/fragment_filter" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="eramo.tahoon.presentation.ui.navbottom.extension.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <argument
+            android:name="searchModel"
+            android:defaultValue="@null"
+            app:argType="eramo.tahoon.domain.model.request.SearchRequest"
+            app:nullable="true" />
+        <argument
+            android:name="searchTitle"
+            app:argType="string" />
+        <argument
+            android:name="sortObject"
+            android:defaultValue="@null"
+            app:argType="eramo.tahoon.domain.model.SortSearchResultObject"
+            app:nullable="true" />
+        <argument
+            android:name="categoryId"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/questionDetailsFragment"
+        android:name="eramo.tahoon.presentation.ui.drawer.QuestionDetailsFragment"
+        android:label="QuestionDetailsFragment"
+        tools:layout="@layout/fragment_question_details" />
+
+    <fragment
+        android:id="@+id/myQueriesFragment"
+        android:name="eramo.tahoon.presentation.ui.drawer.myaccount.queries.MyQueriesFragment"
+        android:label="MyQueriesFragment"
+        tools:layout="@layout/fragment_my_queries" />
+    <dialog
+        android:id="@+id/ERAMODialog"
+        android:name="eramo.tahoon.presentation.ui.dialog.ERAMODialog"
+        android:label="ERAMODialog"
+        tools:layout="@layout/dialog_eramo" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="eramo.tahoon.presentation.ui.navbottom.NotificationFragment"
+        android:label="NotificationFragment"
+        tools:layout="@layout/fragment_notification">
+
+    </fragment>
+    <fragment
+        android:id="@+id/notificationInfoFragment"
+        android:name="eramo.tahoon.presentation.ui.navbottom.extension.NotificationInfoFragment"
+        android:label="NotificationInfoFragment"
+        tools:layout="@layout/fragment_notification_info">
+        <argument
+            android:name="notificationId"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/myAddressesFragment"
+        android:name="eramo.tahoon.presentation.ui.drawer.myaccount.MyAddressesFragment"
+        android:label="fragment_my_addresses"
+        tools:layout="@layout/fragment_my_addresses" />
+    <dialog
+        android:id="@+id/myAddressesDialog"
+        android:name="eramo.tahoon.presentation.ui.dialog.MyAddressesDialog"
+        android:label="MyAddressesDialog">
+        <argument
+            android:name="countryId"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="cityId"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="regionId"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="subRegionId"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="addressType"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="address"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="addressId"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="destenation"
+            app:argType="string" />
+    </dialog>
+    <dialog
+        android:id="@+id/suspendAccountDialog"
+        android:name="eramo.tahoon.presentation.ui.dialog.SuspendAccountDialog"
+        android:label="SuspendAccountDialog" />
+    <dialog
+        android:id="@+id/filterSubCategoryProductsDialog"
+        android:name="eramo.tahoon.presentation.ui.dialog.FilterSubCategoryProductsDialog"
+        android:label="FilterSubCategoryProductsDialog">
+        <argument
+            android:name="subCategoryId"
+            app:argType="string" />
+    </dialog>
+    <fragment
+        android:id="@+id/queryDetailsFragment"
+        android:name="eramo.tahoon.presentation.ui.drawer.myaccount.queries.QueryDetailsFragment"
+        android:label="QueryDetailsFragment"
+        tools:layout="@layout/fragment_query_details">
+        <argument
+            android:name="queryId"
+            app:argType="string" />
+    </fragment>
+    <dialog
+        android:id="@+id/sortSearchResultDialogFragment"
+        android:name="eramo.tahoon.presentation.ui.dialog.SortSearchResultDialogFragment"
+        android:label="fragment_sort_search_result_dialog"
+        tools:layout="@layout/fragment_sort_search_result_dialog">
+        <argument
+            android:name="searchTerm"
+            app:argType="string" />
+        <argument
+            android:name="categoryId"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </dialog>
+    <fragment
+        android:id="@+id/myOrdersAfterCheckoutFragment"
+        android:name="eramo.tahoon.presentation.ui.checkout.MyOrdersAfterCheckoutFragment"
+        android:label="MyOrdersAfterCheckoutFragment" />
+    <fragment
+        android:id="@+id/sectionsProductsFragment"
+        android:name="eramo.tahoon.presentation.ui.navbottom.extension.SectionsProductsFragment"
+        android:label="fragment_sections_products"
+        tools:layout="@layout/fragment_sections_products">
+        <argument
+            android:name="sectionTitle"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/sliderZoomFragment"
+        android:name="eramo.tahoon.presentation.ui.navbottom.extension.SliderZoomFragment"
+        android:label="fragment_slider_zoom"
+        tools:layout="@layout/fragment_slider_zoom">
+        <argument
+            android:name="image"
+            app:argType="android.graphics.Bitmap" />
+    </fragment>
+    <fragment
+        android:id="@+id/subCategoriesFragment"
+        android:name="eramo.tahoon.presentation.ui.navbottom.extension.SubCategoriesFragment"
+        android:label="fragment_sub_categories"
+        tools:layout="@layout/fragment_sub_categories">
+
+        <argument
+            android:name="subCategoriesList"
+            app:argType="eramo.tahoon.data.remote.dto.home.SubCategoryModel[]" />
+    </fragment>
+    <dialog
+        android:id="@+id/filterCitiesDialogFragment2"
+        android:name="eramo.tahoon.presentation.ui.dialog.FilterCitiesDialogNewFragment"
+        android:label="fragment_filter_cities_new_dialog"
+        tools:layout="@layout/fragment_filter_cities_new_dialog" />
+    <dialog
+        android:id="@+id/filterCitiesDialogFragment"
+        android:name="eramo.tahoon.presentation.ui.dialog.FilterCitiesDialogFragment"
+        android:label="fragment_filter_cities_new_dialog"
+        tools:layout="@layout/fragment_filter_cities_new_dialog" />
+    <fragment
+        android:id="@+id/allStoresFragment"
+        android:name="eramo.tahoon.presentation.ui.navbottom.extension.AllStoresFragment"
+        android:label="fragment_all_stores"
+        tools:layout="@layout/fragment_all_stores" />
+    <fragment
+        android:id="@+id/creditPaymentFragment"
+        android:name="eramo.tahoon.presentation.ui.checkout.CreditPaymentFragment"
+        android:label="fragment_credit_payment"
+        tools:layout="@layout/fragment_credit_payment" >
+
+        <action
+            android:id="@+id/action_creditPaymentFragment2_to_checkoutStepThreeFragment"
+            app:destination="@id/checkoutStepThreeFragment" />
+        <argument
+            android:name="totalToSend"
+            app:argType="float" />
+        <argument
+            android:name="pay_type"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

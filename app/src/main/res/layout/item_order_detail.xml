@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_4sdp"
+    android:background="@drawable/shape_gray"
+    android:elevation="@dimen/_6sdp"
+    android:padding="@dimen/_4sdp">
+
+    <ImageView
+        android:id="@+id/itemCheckout_iv_image"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_margin="@dimen/_8sdp"
+        android:contentDescription="@null"
+        android:src="@drawable/pic_air_conditioner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/itemCheckout_tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:maxLines="3"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/itemCheckout_iv_image"
+        app:layout_constraintTop_toTopOf="@+id/itemCheckout_iv_image"
+        tools:text="Product Name" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:text="@string/category"
+        android:textColor="@color/eramo_color"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintStart_toStartOf="@+id/itemCheckout_tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/itemCheckout_tv_name" />
+
+    <TextView
+        android:id="@+id/itemCheckout_tv_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintStart_toEndOf="@+id/textView15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView15"
+        tools:text="Midea Midea Midea Midea Midea Midea Midea Midea Midea Midea " />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:text="@string/availability"
+        android:textColor="@color/eramo_color"
+        android:textSize="@dimen/_10ssp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/itemCheckout_tv_availability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/textView16"
+        app:layout_constraintStart_toEndOf="@+id/textView16"
+        app:layout_constraintTop_toTopOf="@+id/textView16"
+        tools:text="Split" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:text="@string/model_number"
+        android:textColor="@color/eramo_color"
+        android:textSize="@dimen/_10ssp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/itemCheckout_tv_modelNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/textView17"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toTopOf="@+id/textView17"
+        tools:text="2.25 HP" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:text="@string/karat"
+        android:textColor="@color/eramo_color"
+        android:textSize="@dimen/_11ssp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/itemCheckout_tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/textView17"
+        tools:layout_editor_absoluteY="123dp" />
+
+    <TextView
+        android:id="@+id/itemCheckout_tv_karat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11ssp"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/textView21"
+        app:layout_constraintTop_toTopOf="@+id/textView21"
+        tools:text="Carrier" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:text="@string/gram_price"
+        android:textColor="@color/eramo_color"
+        android:textSize="@dimen/_11ssp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/itemCheckout_tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        tools:layout_editor_absoluteY="123dp" />
+
+    <TextView
+        android:id="@+id/itemCheckout_tv_gram_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11ssp"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toTopOf="@+id/textView22"
+        tools:text="Carrier" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:text="@string/weight_"
+        android:textColor="@color/eramo_color"
+        android:textSize="@dimen/_11ssp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/itemCheckout_tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/textView22"
+        tools:layout_editor_absoluteY="123dp" />
+
+    <TextView
+        android:id="@+id/itemCheckout_tv_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11ssp"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/textView23"
+        app:layout_constraintTop_toTopOf="@+id/textView23"
+        tools:text="Carrier" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:text="@string/quantity"
+        android:textColor="@color/eramo_color"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintStart_toStartOf="@+id/itemCheckout_tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/itemCheckout_tv_category"
+        tools:layout_editor_absoluteY="123dp" />
+
+    <TextView
+        android:id="@+id/itemCheckout_tv_qty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView20"
+        tools:text="Carrier Carrier Carrier Carrier Carrier Carrier Carrier " />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:backgroundTint="@color/eramo_color"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/itemCheckout_iv_image"
+        app:layout_constraintTop_toBottomOf="@+id/itemCheckout_tv_qty">
+
+        <TextView
+            android:id="@+id/itemCheckout_tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_12sdp"
+            android:fontFamily="@font/ibmplexsansbold"
+            android:text="@string/s_egp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btn_extras"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_12sdp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/itemCheckout_iv_image"
+        app:strokeColor="@color/eramo_color"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_extras_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/eramo_color"
+            android:paddingVertical="@dimen/_4sdp"
+            android:paddingStart="@dimen/_4sdp"
+            android:paddingEnd="@dimen/_5sdp">
+
+            <TextView
+                android:id="@+id/btn_extras_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/the_extras"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

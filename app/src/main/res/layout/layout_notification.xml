@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:layoutDirection="locale">
+
+    <ImageView
+        android:id="@+id/iv_notification"
+        android:layout_width="@dimen/_22sdp"
+        android:layout_height="@dimen/_22sdp"
+        android:contentDescription="@null"
+        app:tint="@color/eramo_color"
+        android:src="@drawable/pic_notification"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_Count"
+        android:layout_width="@dimen/_12sdp"
+        android:layout_height="@dimen/_12sdp"
+        android:background="@drawable/shape_blue"
+        android:fontFamily="@font/ibmplexsansbold"
+        android:gravity="center"
+        android:layoutDirection="ltr"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_7ssp"
+        android:textDirection="anyRtl"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/iv_notification"
+        app:layout_constraintStart_toEndOf="@+id/iv_notification"
+        app:layout_constraintTop_toTopOf="@+id/iv_notification" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

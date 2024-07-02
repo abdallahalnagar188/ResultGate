@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="locale"
+    tools:context=".presentation.ui.navbottom.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/in_tbLayout"
+            layout="@layout/layout_toolbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/FHome_iv_filter"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:contentDescription="@null"
+            android:focusableInTouchMode="true"
+            android:src="@drawable/ic_filter"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/FHome_et_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/FHome_et_search" />
+
+        <EditText
+            android:id="@+id/FHome_et_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:autofillHints=""
+            android:background="@drawable/stroke_red_radius"
+            android:drawablePadding="@dimen/_4sdp"
+            android:gravity="center_vertical"
+            android:hint="@string/find_an_air_condition"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLength="30"
+            android:minHeight="48dp"
+            android:padding="@dimen/_8sdp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray"
+            android:textCursorDrawable="@null"
+            android:textDirection="locale"
+            app:drawableTint="@color/gray"
+            app:layout_constraintEnd_toStartOf="@+id/FHome_iv_filter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_tbLayout" />
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:src="@drawable/ic_search2"
+            app:layout_constraintBottom_toBottomOf="@+id/FHome_et_search"
+            app:layout_constraintEnd_toEndOf="@+id/FHome_et_search"
+            app:layout_constraintTop_toTopOf="@+id/FHome_et_search" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/FHome_et_search">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_sliderTop"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_marginHorizontal="@dimen/_8sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.smarteist.autoimageslider.SliderView
+                        android:id="@+id/FHome_slider_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray_low"
+                        app:sliderAnimationDuration="600"
+                        app:sliderAutoCycleDirection="right"
+                        app:sliderAutoCycleEnabled="true"
+                        app:sliderIndicatorAnimationDuration="600"
+                        app:sliderIndicatorGravity="center_horizontal|bottom"
+                        app:sliderIndicatorMargin="15dp"
+                        app:sliderIndicatorOrientation="horizontal"
+                        app:sliderIndicatorPadding="3dp"
+                        app:sliderIndicatorRadius="2dp"
+                        app:sliderIndicatorSelectedColor="#FFF"
+                        app:sliderIndicatorUnselectedColor="#5A5A5A"
+                        app:sliderScrollTimeInSec="3"
+                        app:sliderStartAutoCycle="true" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/FHome_tv_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:text="@string/stores"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_sliderTop" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/FHome_Rv_brands"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@+id/cv_sliderTop"
+                    app:layout_constraintHeight_min="@dimen/_100sdp"
+                    app:layout_constraintStart_toStartOf="@+id/cv_sliderTop"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_tv_category"
+                    tools:listitem="@layout/item_category" />
+
+                <Button
+                    android:id="@+id/FHome_btn_browseAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:background="@drawable/shape_purple"
+                    android:fontFamily="@font/ibmplexsansregular"
+                    android:paddingHorizontal="@dimen/_16sdp"
+                    android:text="@string/browse_all_stores"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_Rv_brands" />
+
+                <TextView
+                    android:id="@+id/FHome_tv_featured"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:text="@string/featured_products"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_btn_browseAll" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/FHome_Rv_featured"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@+id/cv_sliderTop"
+                    app:layout_constraintHeight_min="@dimen/_100sdp"
+                    app:layout_constraintStart_toStartOf="@+id/cv_sliderTop"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_tv_featured"
+                    tools:listitem="@layout/item_featured" />
+
+                <LinearLayout
+                    android:id="@+id/dots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/FHome_Rv_featured" />
+
+                <TextView
+                    android:id="@+id/FHome_tv_latestDeals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:text="@string/latest_deals"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_Rv_featured" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_64sdp"
+                    android:layout_marginHorizontal="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:background="@drawable/shape_blue"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_tv_latestDeals" />
+
+                <TextView
+                    android:id="@+id/FHome_tv_days"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/textView20"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/view2"
+                    tools:text="123" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:text=":"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/FHome_tv_hours"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/FHome_tv_days"
+                    app:layout_constraintTop_toTopOf="@+id/FHome_tv_days" />
+
+                <TextView
+                    android:id="@+id/FHome_tv_hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/textView21"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView20"
+                    app:layout_constraintTop_toTopOf="@+id/FHome_tv_days"
+                    tools:text="5" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:text=":"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/FHome_tv_minutes"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/FHome_tv_hours"
+                    app:layout_constraintTop_toTopOf="@+id/FHome_tv_days" />
+
+                <TextView
+                    android:id="@+id/FHome_tv_minutes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/textView22"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView21"
+                    app:layout_constraintTop_toTopOf="@+id/FHome_tv_days"
+                    tools:text="44" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:text=":"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/FHome_tv_seconds"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/FHome_tv_minutes"
+                    app:layout_constraintTop_toTopOf="@+id/FHome_tv_days" />
+
+                <TextView
+                    android:id="@+id/FHome_tv_seconds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/FHome_tv_days"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView22"
+                    app:layout_constraintTop_toTopOf="@+id/FHome_tv_days"
+                    tools:text="07" />
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:gravity="center"
+                    android:text="@string/days"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/FHome_tv_days"
+                    app:layout_constraintStart_toStartOf="@+id/FHome_tv_days"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_tv_days" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:gravity="center"
+                    android:text="@string/hrs"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/FHome_tv_hours"
+                    app:layout_constraintStart_toStartOf="@+id/FHome_tv_hours"
+                    app:layout_constraintTop_toTopOf="@+id/textView23" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:gravity="center"
+                    android:text="@string/min"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/FHome_tv_minutes"
+                    app:layout_constraintStart_toStartOf="@+id/FHome_tv_minutes"
+                    app:layout_constraintTop_toTopOf="@+id/textView23" />
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:gravity="center"
+                    android:text="@string/sec"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/FHome_tv_seconds"
+                    app:layout_constraintStart_toStartOf="@+id/FHome_tv_seconds"
+                    app:layout_constraintTop_toTopOf="@+id/textView23" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/FHome_rv_deals"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@+id/cv_sliderTop"
+                    app:layout_constraintHeight_min="@dimen/_100sdp"
+                    app:layout_constraintStart_toStartOf="@+id/cv_sliderTop"
+                    app:layout_constraintTop_toBottomOf="@+id/view2"
+                    app:spanCount="2"
+                    tools:listitem="@layout/item_deal" />
+
+                <TextView
+                    android:id="@+id/FHome_tv_latestProducts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:text="@string/latest_products"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_rv_deals" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/FHome_rv_products"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@+id/cv_sliderTop"
+                    app:layout_constraintHeight_min="@dimen/_100sdp"
+                    app:layout_constraintStart_toStartOf="@+id/cv_sliderTop"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_tv_latestProducts"
+                    app:spanCount="2"
+                    tools:listitem="@layout/item_product" />
+
+                <Button
+                    android:id="@+id/FHome_btn_checkAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:background="@drawable/shape_purple"
+                    android:fontFamily="@font/ibmplexsansregular"
+                    android:paddingHorizontal="@dimen/_16sdp"
+                    android:text="@string/all_products"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_rv_products" />
+
+                <TextView
+                    android:id="@+id/FHome_tv_most_viewed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:text="@string/most_viewed_products"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_btn_checkAll" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/FHome_rv_most_viewed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@+id/cv_sliderTop"
+                    app:layout_constraintHeight_min="@dimen/_100sdp"
+                    app:layout_constraintStart_toStartOf="@+id/cv_sliderTop"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_tv_most_viewed"
+                    app:spanCount="2"
+                    tools:listitem="@layout/item_product" />
+
+                <TextView
+                    android:id="@+id/FHome_tv_recent_categories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:text="@string/most_selling_categories"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_rv_most_viewed" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_recent_categories"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_tv_recent_categories"
+                    app:spanCount="3"
+                    tools:listitem="@layout/item_recent_categories" />
+
+                <TextView
+                    android:id="@+id/FHome_tv_sec_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    tools:text="SEC 1"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_recent_categories" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/FHome_rv_sec_one"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@+id/cv_sliderTop"
+                    app:layout_constraintHeight_min="@dimen/_100sdp"
+                    app:layout_constraintStart_toStartOf="@+id/cv_sliderTop"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_tv_sec_one"
+                    app:spanCount="2"
+                    tools:listitem="@layout/item_product" />
+
+                <TextView
+                    android:id="@+id/FHome_tv_sec_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    tools:text="SEC 2"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_rv_sec_one" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/FHome_rv_sec_two"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@+id/cv_sliderTop"
+                    app:layout_constraintHeight_min="@dimen/_100sdp"
+                    app:layout_constraintStart_toStartOf="@+id/cv_sliderTop"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_tv_sec_two"
+                    app:spanCount="2"
+                    tools:listitem="@layout/item_product" />
+
+                <TextView
+                    android:id="@+id/FHome_tv_sec_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    tools:text="SEC 3"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_rv_sec_two" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/FHome_rv_sec_three"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@+id/cv_sliderTop"
+                    app:layout_constraintHeight_min="@dimen/_100sdp"
+                    app:layout_constraintStart_toStartOf="@+id/cv_sliderTop"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_tv_sec_three"
+                    app:spanCount="2"
+                    tools:listitem="@layout/item_product" />
+
+                <TextView
+                    android:id="@+id/FHome_tv_sec_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    tools:text="SEC 4"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_rv_sec_three" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/FHome_rv_sec_four"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@+id/cv_sliderTop"
+                    app:layout_constraintHeight_min="@dimen/_100sdp"
+                    app:layout_constraintStart_toStartOf="@+id/cv_sliderTop"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_tv_sec_four"
+                    app:spanCount="2"
+                    tools:listitem="@layout/item_product" />
+
+
+                <TextView
+                    android:id="@+id/FHome_tv_most_sale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:text="@string/most_sale_products"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_rv_sec_four" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/FHome_rv_most_sale"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@+id/cv_sliderTop"
+                    app:layout_constraintHeight_min="@dimen/_100sdp"
+                    app:layout_constraintStart_toStartOf="@+id/cv_sliderTop"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_tv_most_sale"
+                    app:spanCount="2"
+                    tools:listitem="@layout/item_product" />
+
+                <TextView
+                    android:id="@+id/FHome_tv_specialOffers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:fontFamily="@font/ibmplexsansbold"
+                    android:text="@string/special_offers"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_rv_most_sale" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vp_sliderImages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:layout_marginBottom="@dimen/_86sdp"
+                    android:paddingHorizontal="@dimen/_60sdp"
+                    android:paddingVertical="@dimen/_6sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/cv_sliderTop"
+                    app:layout_constraintHeight_min="@dimen/_100sdp"
+                    app:layout_constraintStart_toStartOf="@+id/cv_sliderTop"
+                    app:layout_constraintTop_toBottomOf="@+id/FHome_tv_specialOffers" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

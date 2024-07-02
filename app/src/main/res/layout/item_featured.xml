@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_eramo"
+    android:padding="@dimen/_4sdp">
+
+    <ImageView
+        android:id="@+id/itemFeatured_iv_image"
+        android:layout_width="@dimen/_94sdp"
+        android:layout_height="@dimen/_94sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:contentDescription="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pic_air_conditioner" />
+
+    <ImageView
+        android:id="@+id/itemFeatured_iv_fav"
+        android:layout_width="@dimen/_16sdp"
+        android:layout_height="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:contentDescription="@null"
+        android:layout_margin="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_heart" />
+
+    <TextView
+        android:id="@+id/itemFeatured_tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:fontFamily="@font/gowunbatangregular"
+        android:gravity="center"
+        tools:text="Product Name"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemFeatured_iv_image" />
+
+    <TextView
+        android:id="@+id/itemFeatured_tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:fontFamily="@font/ibmplexsansbold"
+        android:text="@string/s_egp"
+        android:textColor="@color/eramo_color"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemFeatured_tv_name" />
+
+    <TextView
+        android:id="@+id/itemFeatured_tv_shopNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/stroke_blue_radius"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:paddingVertical="@dimen/_4sdp"
+        android:text="@string/shop_now"
+        android:textColor="@color/eramo_color"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemFeatured_tv_price" />
+
+    <View
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:background="@drawable/shape_eramo_fill"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemFeatured_tv_shopNow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

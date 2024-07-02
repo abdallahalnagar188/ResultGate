@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="locale">
+
+    <include
+        android:id="@+id/in_tbLayout"
+        layout="@layout/layout_toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_noData"
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="@dimen/_130sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/no_data" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:text="@string/cart_is_empty"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottie_noData" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/FCart_rv_products"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:layout_marginVertical="@dimen/_4sdp"
+        android:nestedScrollingEnabled="false"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/FCart_tv_taxes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/in_tbLayout"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/item_cart" />
+
+    <TextView
+        android:id="@+id/FCart_tv_taxes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:text="@string/taxes_s_egp"
+        android:textColor="@color/eramo_color"
+        android:textSize="@dimen/_14ssp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/FCart_tv_shipping" />
+
+    <TextView
+        android:id="@+id/FCart_tv_shipping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:text="@string/shipping_s_egp"
+        android:textColor="@color/eramo_color"
+        android:textSize="@dimen/_14ssp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/FCart_tv_total"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@+id/FCart_tv_taxes" />
+
+    <TextView
+        android:id="@+id/FCart_tv_total"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:fontFamily="@font/ibmplexsansbold"
+        android:text="@string/total_s_egp"
+        android:textColor="@color/eramo_color"
+        android:textSize="@dimen/_16ssp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/FCart_btn_proceed"
+        app:layout_constraintEnd_toEndOf="@+id/FCart_rv_products"
+        app:layout_constraintStart_toStartOf="@+id/FCart_rv_products" />
+
+    <Button
+        android:id="@+id/FCart_btn_proceed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_84sdp"
+        android:background="@drawable/shape_purple"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:padding="@dimen/_8sdp"
+        android:text="@string/proceed_to_buy"
+        android:textColor="@color/white"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/FCart_rv_products"
+        app:layout_constraintStart_toStartOf="@+id/FCart_rv_products" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_emptyCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="lottie_noData,textView15" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

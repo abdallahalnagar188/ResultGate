@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layoutDirection="locale"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="@style/ToolbarStyle"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_scrollFlags="scroll|snap"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:contentDescription="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pic_logo" />
+
+    <ImageView
+        android:id="@+id/iv_shop"
+        android:layout_width="@dimen/_34sdp"
+        android:layout_height="@dimen/_34sdp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:contentDescription="@null"
+        android:padding="@dimen/_8sdp"
+        android:src="@drawable/ic_shop"
+        app:tint="@color/black" />
+
+    <ImageView
+        android:id="@+id/iv_search"
+        android:layout_width="@dimen/_34sdp"
+        android:layout_height="@dimen/_34sdp"
+        android:layout_gravity="end"
+        android:contentDescription="@null"
+        android:padding="@dimen/_8sdp"
+        android:src="@drawable/ic_search"
+        app:tint="@color/black" />
+
+</androidx.appcompat.widget.Toolbar>

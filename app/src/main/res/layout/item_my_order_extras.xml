@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_4sdp"
+    android:paddingHorizontal="@dimen/_8sdp"
+    android:paddingTop="@dimen/_4sdp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="product name "
+        android:fontFamily="@font/ibmplexsansregular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        />
+
+    <TextView
+        android:id="@+id/tv_unit_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="unite price"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:textColor="@color/eramo_color"
+        android:textSize="@dimen/_12ssp"
+        />
+
+    <TextView
+        android:id="@+id/tv_quantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/quantity"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/eramo_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_unit_price"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_quantity_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="10"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/eramo_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_unit_price"
+        app:layout_constraintStart_toEndOf="@id/tv_quantity"
+        />
+
+    <TextView
+        android:id="@+id/tv_total_cost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/total_cost"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/eramo_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_quantity"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_total_cost_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="20000 EGP"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/eramo_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_quantity"
+        app:layout_constraintBottom_toBottomOf="@id/view_divider"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintStart_toEndOf="@id/tv_total_cost"
+        />
+
+    <View
+        android:id="@+id/view_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha="0.33"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/gray"
+        android:layout_marginHorizontal="@dimen/_2sdp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="locale"
+    tools:context=".presentation.ui.navbottom.ShopFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/FSearch_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="locale"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ToolbarStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_scrollFlags="scroll|snap"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ibmplexsansregular"
+            android:text="@string/result"
+            android:textColor="@color/eramo_color"
+            android:textSize="@dimen/_16ssp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/iv_sort"
+        android:layout_width="@dimen/_22sdp"
+        android:layout_height="@dimen/_22sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_filter"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="@id/FSearch_toolbar"
+        app:layout_constraintBottom_toBottomOf="@id/FSearch_toolbar"
+        app:layout_constraintEnd_toEndOf="@id/FSearch_toolbar"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/FSearch_rv_products"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/_86sdp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FSearch_toolbar"
+        app:spanCount="2"
+        tools:listitem="@layout/item_product_shop" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

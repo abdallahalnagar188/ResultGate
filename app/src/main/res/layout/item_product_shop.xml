@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_4sdp"
+    android:background="@drawable/shape_gray"
+    android:padding="@dimen/_4sdp">
+
+    <ImageView
+        android:id="@+id/itemProductShop_iv_image"
+        android:layout_width="@dimen/_94sdp"
+        android:layout_height="@dimen/_94sdp"
+        android:contentDescription="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pic_air_conditioner" />
+
+    <TextView
+        android:id="@+id/itemProduct_iv_new"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:background="@drawable/shape_red"
+        android:gravity="center"
+        android:text="@string/new_"
+        android:textColor="@color/white"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/red" />
+
+    <ImageView
+        android:id="@+id/itemProductShop_iv_fav"
+        android:layout_width="@dimen/_16sdp"
+        android:layout_height="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:contentDescription="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/itemProductShop_iv_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_heart" />
+
+    <TextView
+        android:id="@+id/itemProductShop_tv_discount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_4sdp"
+        android:background="@color/red"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:gravity="center"
+        android:padding="@dimen/_2sdp"
+        android:text="10%"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:alpha="0.85"
+        app:layout_constraintTop_toBottomOf="@+id/itemProductShop_iv_fav" />
+
+    <TextView
+        android:id="@+id/itemProductShop_tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_4sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/itemProductShop_tv_category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemProductShop_iv_image"
+        app:layout_constraintVertical_bias="1"
+        tools:text="Carrier 2.25 HP " />
+
+    <TextView
+        android:id="@+id/itemProductShop_tv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:textColor="@color/eramo_color"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toTopOf="@+id/itemDeal_tv_priceAfter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Split" />
+
+    <TextView
+        android:id="@+id/itemDeal_tv_priceAfter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ibmplexsansbold"
+        android:text="@string/s_egp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:textColor="@color/eramo_color"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/itemDeal_tv_priceBefore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/itemDeal_tv_priceBefore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ibmplexsansbold"
+        android:text="@string/s_egp"
+        android:visibility="gone"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:alpha="0.5"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

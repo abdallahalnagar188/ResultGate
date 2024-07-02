@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/eramo_color"
+    android:fillViewport="true"
+    android:fitsSystemWindows="false"
+    android:layoutDirection="locale">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/FEditPersonal_iv_back"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:contentDescription="@null"
+            android:padding="@dimen/_2sdp"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_left_white" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/FEditPersonal_camera"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_gravity="center"
+            android:elevation="@dimen/_3sdp"
+            android:src="@drawable/ic_camera"
+            app:layout_constraintEnd_toEndOf="@+id/FEditPersonal_profile"
+            app:layout_constraintTop_toTopOf="@+id/FEditPersonal_profile" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/FEditPersonal_profile"
+            android:layout_width="@dimen/_94sdp"
+            android:layout_height="@dimen/_94sdp"
+            android:src="@drawable/pic_user_placeholder"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="@dimen/_1sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/FEditPersonal_iv_back" />
+
+        <View
+            android:id="@+id/view6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_68sdp"
+            android:background="@drawable/shape_white_up"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/FEditPersonal_profile" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/itl_firstName"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:fontFamily="@font/ibmplexsansregular"
+            android:textColorHint="@color/gray"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toStartOf="@id/itl_lastName"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toTopOf="@+id/view6">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signup_et_firstName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/stroke_blue_radius"
+                android:drawableStart="@drawable/ic_user"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:hint="@string/full_name"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress|textNoSuggestions"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textDirection="locale" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/itl_lastName"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:fontFamily="@font/ibmplexsansregular"
+            android:textColorHint="@color/gray"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toEndOf="@id/itl_firstName"
+            app:layout_constraintTop_toTopOf="@+id/view6">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signup_et_lastName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/stroke_blue_radius"
+                android:drawableStart="@drawable/ic_user"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:hint="@string/last_name"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress|textNoSuggestions"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textDirection="locale" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/itl_phone"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:textColorHint="@color/gray"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/itl_firstName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/FEditPersonal_et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/stroke_blue_radius"
+                android:drawableStart="@drawable/ic_phone"
+                android:drawablePadding="@dimen/_8sdp"
+                android:focusable="false"
+                android:hint="@string/mobile_number"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress|textNoSuggestions"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textDirection="locale" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/itl_email"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:textColorHint="@color/gray"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/itl_phone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/FEditPersonal_et_email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/stroke_blue_radius"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="@dimen/_8sdp"
+                android:focusable="false"
+                android:hint="@string/email"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress|textNoSuggestions"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textDirection="locale" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/itl_birthDate"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/ibmplexsansregular"
+            android:textColorHint="@color/gray"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/itl_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signup_et_birthDate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/stroke_blue_radius"
+                android:cursorVisible="false"
+                android:drawableStart="@drawable/ic_calender"
+                android:drawablePadding="@dimen/_8sdp"
+                android:focusable="false"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:hint="@string/birth_date"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress|textNoSuggestions"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textDirection="locale" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:baselineAligned="false"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/itl_firstName"
+            app:layout_constraintStart_toStartOf="@+id/itl_firstName"
+            app:layout_constraintTop_toBottomOf="@+id/itl_email">
+
+            <include
+                android:id="@+id/FEditPersonal_in_country"
+                layout="@layout/layout_custom_spinner"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_weight="1" />
+
+            <include
+                android:id="@+id/FEditPersonal_in_city"
+                layout="@layout/layout_custom_spinner"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_weight="1" />
+
+            <include
+                android:id="@+id/FEditPersonal_in_region"
+                layout="@layout/layout_custom_spinner"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/itl_address"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/ibmplexsansregular"
+            android:textColorHint="@color/gray"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/FEditPersonal_et_address"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/stroke_red_radius"
+                android:drawableStart="@drawable/ic_location"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:hint="@string/address"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:visibility="gone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/FEditPersonal_btn_save"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/shape_purple"
+            android:fontFamily="@font/ibmplexsansregular"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toTopOf="@id/guideline3"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/itl_birthDate" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".05" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

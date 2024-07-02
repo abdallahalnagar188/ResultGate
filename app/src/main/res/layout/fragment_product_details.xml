@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <include
+        android:id="@+id/in_tbLayout"
+        layout="@layout/layout_toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/in_tbLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/FDProduct_tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:gravity="start"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/FDProduct_iv_share"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Mission " />
+
+            <ImageView
+                android:id="@+id/FDProduct_iv_fav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:contentDescription="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/FDProduct_tv_name"
+                app:srcCompat="@drawable/ic_heart" />
+
+            <ImageView
+                android:id="@+id/FDProduct_iv_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:contentDescription="@null"
+                app:layout_constraintEnd_toStartOf="@+id/FDProduct_iv_fav"
+                app:layout_constraintTop_toTopOf="@+id/FDProduct_tv_name"
+                app:srcCompat="@drawable/ic_share" />
+
+            <ImageView
+                android:id="@+id/FDProduct_iv_image"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:contentDescription="@null"
+                app:layout_constraintStart_toStartOf="@+id/FDProduct_tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/FDProduct_tv_name"
+                tools:srcCompat="@drawable/pic_air_conditioner" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:text="@string/category"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toEndOf="@+id/FDProduct_iv_image"
+                app:layout_constraintTop_toTopOf="@+id/FDProduct_iv_image" />
+
+            <TextView
+                android:id="@+id/FDProduct_tv_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView15"
+                app:layout_constraintStart_toEndOf="@+id/textView15"
+                app:layout_constraintTop_toTopOf="@+id/textView15"
+                tools:text="Midea" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:text="@string/availability"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="@+id/textView15"
+                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+            <TextView
+                android:id="@+id/FDProduct_tv_availability_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:textColor="@color/purple"
+                tools:textColor="@color/green"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView16"
+                app:layout_constraintStart_toEndOf="@+id/textView16"
+                app:layout_constraintTop_toTopOf="@+id/textView16"
+                tools:text="In stock" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:text="@string/model_number"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="@+id/textView15"
+                app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+            <TextView
+                android:id="@+id/FDProduct_tv_model_number_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:maxLines="1"
+                android:textColor="@color/purple"
+                android:textDirection="locale"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView17"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView17"
+                app:layout_constraintTop_toTopOf="@+id/textView17"
+                tools:text="22" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:text="@string/in_stock"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                android:textAllCaps="true"
+                app:layout_constraintStart_toStartOf="@+id/textView15"
+                app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+            <TextView
+                android:id="@+id/FDProduct_tv_in_stock_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:visibility="visible"
+                android:textColor="@color/purple"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView21"
+                app:layout_constraintStart_toEndOf="@+id/textView21"
+                app:layout_constraintTop_toTopOf="@+id/textView21"
+                tools:text="200" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:text="@string/vendor_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="@+id/textView15"
+                app:layout_constraintTop_toBottomOf="@+id/textView21"/>
+
+            <TextView
+                android:id="@+id/FDProduct_tv_vendor_name_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:textColor="@color/purple"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView22"
+                app:layout_constraintStart_toEndOf="@+id/textView22"
+                app:layout_constraintTop_toTopOf="@+id/textView22"
+                tools:text="Bellout" />
+
+            <TextView
+                android:id="@+id/FDProduct_tv_taxesCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:text="@string/taxes_cost_s_egp"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_8ssp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/FDProduct_tv_priceAfter"
+                app:layout_constraintStart_toStartOf="@+id/FDProduct_tv_priceAfter"
+                app:layout_constraintTop_toBottomOf="@+id/FDProduct_tv_priceBefore" />
+
+            <TextView
+                android:id="@+id/FDProduct_tv_shipping"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:gravity="center"
+                android:textColor="@color/eramo_color"
+                android:textSize="@dimen/_8ssp"
+                app:drawableStartCompat="@drawable/pic_truck"
+                app:layout_constraintEnd_toEndOf="@+id/FDProduct_tv_priceAfter"
+                app:layout_constraintStart_toStartOf="@+id/FDProduct_tv_priceAfter"
+                app:layout_constraintTop_toBottomOf="@+id/FDProduct_tv_taxesCost"
+                tools:text="English Shipping text" />
+
+            <TextView
+                android:id="@+id/FDProduct_tv_priceAfter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ibmplexsansbold"
+                android:textColor="@color/purple"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/FDProduct_rv_more"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/FDProduct_iv_image"
+                app:layout_constraintVertical_bias=".3"
+                tools:text="@string/s_egp" />
+
+            <View
+                android:id="@+id/view12"
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="0dp"
+                android:background="@color/gray_low"
+                android:visibility="invisible"
+                android:layout_marginStart="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/FDProduct_btn_buy"
+                app:layout_constraintEnd_toStartOf="@+id/FDProduct_tv_shipping"
+                app:layout_constraintTop_toBottomOf="@+id/FDProduct_rv_more" />
+
+            <TextView
+                android:id="@+id/FDProduct_tv_priceBefore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/ibmplexsansbold"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/FDProduct_tv_priceAfter"
+                app:layout_constraintStart_toStartOf="@+id/FDProduct_tv_priceAfter"
+                app:layout_constraintTop_toBottomOf="@+id/FDProduct_tv_priceAfter"
+                tools:text="@string/s_egp" />
+
+            <TextView
+                android:id="@+id/FDProduct_tv_addToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/ibmplexsansbold"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/add_to_cart"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toTopOf="@+id/view10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/FDProduct_iv_image"
+                app:layout_constraintTop_toBottomOf="@+id/FDProduct_tv_shipping"
+                app:layout_constraintVertical_bias=".25" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_2sdp"
+                android:background="@color/eramo_color"
+                app:layout_constraintEnd_toEndOf="@+id/FDProduct_tv_addToCart"
+                app:layout_constraintStart_toStartOf="@+id/FDProduct_tv_addToCart"
+                app:layout_constraintTop_toBottomOf="@+id/FDProduct_tv_addToCart" />
+
+            <TextView
+                android:id="@+id/FDProduct_btn_buy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/shape_purple"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_4sdp"
+                android:text="@string/buy_now"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/FDProduct_tv_addToCart"
+                app:layout_constraintStart_toStartOf="@+id/FDProduct_tv_addToCart"
+                app:layout_constraintTop_toBottomOf="@+id/FDProduct_tv_addToCart" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/FDProduct_rv_more"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="@+id/FDProduct_iv_image"
+                app:layout_constraintStart_toStartOf="@+id/FDProduct_iv_image"
+                app:layout_constraintTop_toBottomOf="@+id/FDProduct_iv_image"
+                tools:listitem="@layout/item_product_more" />
+
+            <View
+                android:id="@+id/view10"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_2sdp"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/light_gray"
+                app:layout_constraintTop_toBottomOf="@+id/FDProduct_btn_buy"
+                tools:layout_editor_absoluteX="10dp" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ibmplexsansbold"
+                android:text="@string/quantity"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/linearLayout5"
+                app:layout_constraintStart_toStartOf="@+id/FDProduct_iv_image"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout5" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toStartOf="@id/view12"
+                app:layout_constraintStart_toEndOf="@+id/textView18"
+                app:layout_constraintTop_toBottomOf="@+id/FDProduct_rv_more">
+
+                <ImageView
+                    android:id="@+id/FDProduct_iv_minus"
+                    android:layout_width="@dimen/_23sdp"
+                    android:layout_height="@dimen/_23sdp"
+                    android:layout_weight="1"
+                    android:background="@color/eramo_color"
+                    android:contentDescription="@null"
+                    android:padding="@dimen/_6sdp"
+                    android:src="@drawable/ic_minus"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/FDProduct_tv_count"
+                    android:layout_width="@dimen/_23sdp"
+                    android:layout_height="@dimen/_23sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/stroke_blue"
+                    android:fontFamily="@font/ibmplexsansregular"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:text="@string/_1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp" />
+
+                <ImageView
+                    android:id="@+id/FDProduct_iv_plus"
+                    android:layout_width="@dimen/_23sdp"
+                    android:layout_height="@dimen/_23sdp"
+                    android:layout_weight="1"
+                    android:background="@color/eramo_color"
+                    android:contentDescription="@null"
+                    android:padding="@dimen/_6sdp"
+                    android:src="@drawable/ic_plus"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/FDProduct_tv_productSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/ibmplexsansbold"
+                android:text="@string/product_size"
+                android:visibility="visible"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="@+id/FDProduct_iv_image"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+                tools:visibility="visible" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/FDProduct_rv_size"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout5"
+                app:layout_constraintHeight_min="@dimen/_30sdp"
+                app:layout_constraintStart_toStartOf="@+id/FDProduct_iv_image"
+                app:layout_constraintTop_toBottomOf="@+id/FDProduct_tv_productSize"
+                tools:listitem="@layout/item_product_size"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/FDProduct_tv_productColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/ibmplexsansbold"
+                android:visibility="visible"
+                android:text="@string/product_color"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="@+id/FDProduct_iv_image"
+                app:layout_constraintTop_toBottomOf="@+id/FDProduct_rv_size"
+                tools:visibility="visible" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/FDProduct_rv_color"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout5"
+                app:layout_constraintHeight_min="@dimen/_30sdp"
+                app:layout_constraintStart_toStartOf="@+id/FDProduct_iv_image"
+                app:layout_constraintTop_toBottomOf="@+id/FDProduct_tv_productColor"
+                tools:listitem="@layout/item_product_color"
+                tools:visibility="visible" />
+
+            <include
+                android:id="@+id/FDProduct_in_buyWith"
+                layout="@layout/layout_buy_with"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view10" />
+
+            <View
+                android:id="@+id/view11"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_2sdp"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@color/light_gray"
+                app:layout_constraintTop_toBottomOf="@+id/FDProduct_in_buyWith"
+                tools:layout_editor_absoluteX="10dp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/FDProduct_iv_fav"
+                app:layout_constraintStart_toStartOf="@+id/FDProduct_tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/view11">
+
+                <Button
+                    android:id="@+id/FDProduct_btn_instruction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/gray_low"
+                    android:fontFamily="@font/ibmplexsansregular"
+                    android:text="@string/details"
+                    android:textAllCaps="false"
+                    tools:ignore="ButtonStyle" />
+
+                <Button
+                    android:id="@+id/FDProduct_btn_features"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:fontFamily="@font/ibmplexsansregular"
+                    android:text="@string/features"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    tools:ignore="ButtonStyle" />
+
+                <Button
+                    android:id="@+id/FDProduct_btn_extra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:fontFamily="@font/ibmplexsansregular"
+                    android:text="@string/extra_info"
+                    android:textAllCaps="false"
+                    tools:ignore="ButtonStyle" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/FDProduct_tv_data"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_86sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:lineSpacingExtra="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/FDProduct_iv_fav"
+                app:layout_constraintStart_toStartOf="@+id/FDProduct_tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+                tools:text="sdbssdbshbjh\dhsbbdjbh\dshbjcbshksdbchcsabkbachjbdnvsdvsjhdsfbjk\bjkbk"
+                tools:visibility="visible" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/FDProduct_group_actions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="view3,FDProduct_tv_addToCart,linearLayout5,textView18,FDProduct_btn_buy" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
