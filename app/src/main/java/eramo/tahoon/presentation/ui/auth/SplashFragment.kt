@@ -19,13 +19,13 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val videoView: VideoView = view.findViewById(R.id.videoView)
-        val video = Uri.parse("android.resource://${activity?.packageName}/${R.raw.intro}")
-        videoView.setVideoURI(video)
+//        val videoView: VideoView = view.findViewById(R.id.videoView)
+//        val video = Uri.parse("android.resource://${activity?.packageName}/${R.raw.intro}")
+//        videoView.setVideoURI(video)
 
         lifecycleScope.launchWhenResumed {
-            videoView.start()
-            if(!UserUtil.hasDeepLink()) delay(5000L)
+//            videoView.start()
+            if(!UserUtil.hasDeepLink()) delay(2000L)
             if(!UserUtil.hasDeepLink()) delay(1L)
 
             val shouldNavigateToMain = UserUtil.isRememberUser() || !UserUtil.isFirstTime()

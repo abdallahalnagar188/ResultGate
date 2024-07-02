@@ -55,17 +55,11 @@ class PaymentAdapter @Inject constructor() :
                     Glide.with(itemView)
                         .load(R.drawable.ic_visa)
                         .into(this.itemPaymentIv)
-                }else if (model.title == itemView.context.getString((R.string.symbl))) {
-                    Glide.with(itemView)
-                        .load(R.drawable.syml_background)
-                        .into(this.itemPaymentIv)
                 }
-
-
-//                if (model.title == itemView.context.getString(R.string.credit)){
-//                    binding.root.setBackgroundResource(R.drawable.shape_white)
-//                    binding.root.alpha = 0.5f
-//                }
+                if (model.title == itemView.context.getString(R.string.online_payment)){
+                    binding.root.setBackgroundResource(R.drawable.shape_white)
+                    binding.root.alpha = 0.5f
+                }
 
             }
         }

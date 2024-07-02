@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toStartOf="@id/toolbar_iv_profile"
         app:layout_constraintStart_toEndOf="@id/toolbar_iv_menu"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pic_logo" />
+        app:srcCompat="@drawable/resultgatelogo" />
 
 
     <de.hdodenhof.circleimageview.CircleImageView

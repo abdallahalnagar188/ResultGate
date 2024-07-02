@@ -32,7 +32,7 @@
     <color name="black_low">#2C2C2C</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="purple">#E30613</color>
+    <color name="purple">#29ABE2</color>
     <color name="gray">#757575</color>
     <color name="gray_low">#F1F1F1</color>
     <color name="light_gray">#4DD5D5D5</color>
@@ -44,5 +44,6 @@
     <color name="yellow_low">#FFF6DB</color>
     <color name="blue_low">#BFCEFA</color>
 
-    <color name="eramo_color">#E30613</color>
+<!--    <color name="eramo_color">#E30613</color>-->
+    <color name="eramo_color">#29ABE2</color>
 </resources>

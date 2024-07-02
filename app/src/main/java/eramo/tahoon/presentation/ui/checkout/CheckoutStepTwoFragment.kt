@@ -157,9 +157,9 @@ class CheckoutStepTwoFragment : Fragment(R.layout.fragment_checkout_step_two),
         list.add(
             PaymentTypesModel("", getString(R.string.cash_on_delivery), "", "", "")
         )
-        list.add(
-            PaymentTypesModel("", getString(R.string.symbl), "", "", "")
-        )
+//        list.add(
+//            PaymentTypesModel("", getString(R.string.symbl), "", "", "")
+//        )
 
         paymentAdapter.submitList(list)
     }

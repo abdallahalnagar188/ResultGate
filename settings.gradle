@@ -11,5 +11,5 @@ dependencyResolutionManagement {
         maven { url "https://jitpack.io" }  //Make sure to add this in your project for uCrop - an internal library
     }
 }
-rootProject.name = "Tahoon"
+rootProject.name = "ResultGate"
 include ':app'

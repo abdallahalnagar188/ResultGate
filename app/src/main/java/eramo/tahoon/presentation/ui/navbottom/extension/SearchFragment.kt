@@ -190,6 +190,7 @@ class SearchFragment : Fragment(R.layout.fragment_search),
         lifecycleScope.launchWhenStarted {
             viewModel.searchState.collect { data ->
                 data?.let { it ->
+                    binding.lottieNoData.visibility = View.GONE
                     productShopAdapter.submitData(viewLifecycleOwner.lifecycle, it)
 //                    productShopAdapter.loadStateFlow.map { it.refresh }
 //                        .distinctUntilChanged()
@@ -212,6 +213,10 @@ class SearchFragment : Fragment(R.layout.fragment_search),
 //                            }
 //                        }
 //                    }
+
+                }
+                data.let {
+                        binding.lottieNoData.visibility = View.VISIBLE
 
                 }
             }

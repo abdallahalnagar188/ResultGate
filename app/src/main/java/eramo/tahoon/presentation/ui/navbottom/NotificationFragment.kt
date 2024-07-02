@@ -14,6 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import eramo.tahoon.R
 import eramo.tahoon.data.remote.dto.NotificationResponse
 import eramo.tahoon.databinding.FragmentNotificationBinding
+import eramo.tahoon.domain.model.User
 import eramo.tahoon.presentation.adapters.recycleview.vertical.NotificationAdapter
 import eramo.tahoon.presentation.ui.dialog.LoadingDialog
 import eramo.tahoon.presentation.ui.drawer.myaccount.order.OrderDetailsFragmentArgs
@@ -114,8 +115,10 @@ class NotificationFragment : Fragment(R.layout.fragment_notification),
                     }
 
                     is UiState.Error -> {
+                        if (UserUtil.isUserLogin()){
+                            showToast(state.message!!.asString(requireContext()))
+                        }
                         LoadingDialog.dismissDialog()
-                        showToast(state.message!!.asString(requireContext()))
                     }
 
                     is UiState.Loading -> {
