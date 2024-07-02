@@ -17,7 +17,7 @@
             android:layout_height="@dimen/_150sdp"
             android:contentDescription="@null"
             android:scaleType="fitXY"
-            android:src="@drawable/pic_drawer_background"
+            android:src="@drawable/sidemenu_bg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

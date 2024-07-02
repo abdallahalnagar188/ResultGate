@@ -6,17 +6,17 @@
     app:startDestination="@id/splashFragment">
     <fragment
         android:id="@+id/splashFragment"
-        android:name="eramo.tahoon.presentation.ui.auth.SplashFragment"
+        android:name="eramo.resultgate.presentation.ui.auth.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash"/>
     <fragment
         android:id="@+id/onBoardingFragment"
-        android:name="eramo.tahoon.presentation.ui.auth.OnBoardingFragment"
+        android:name="eramo.resultgate.presentation.ui.auth.OnBoardingFragment"
         android:label="OnBoardingFragment"
         tools:layout="@layout/fragment_on_boarding"/>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="eramo.tahoon.presentation.ui.auth.LoginFragment"
+        android:name="eramo.resultgate.presentation.ui.auth.LoginFragment"
         android:label="@string/log_in"
         tools:layout="@layout/fragment_login">
         <argument
@@ -26,29 +26,29 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="eramo.tahoon.presentation.ui.auth.SignUpFragment"
+        android:name="eramo.resultgate.presentation.ui.auth.SignUpFragment"
         android:label="@string/sign_up"
         tools:layout="@layout/fragment_signup"/>
     <fragment
         android:id="@+id/forgetPasswordFragment"
-        android:name="eramo.tahoon.presentation.ui.auth.ForgetPasswordFragment"
+        android:name="eramo.resultgate.presentation.ui.auth.ForgetPasswordFragment"
         android:label="@string/forgot_password"
         tools:layout="@layout/fragment_forget_password" >
 
     </fragment>
     <fragment
         android:id="@+id/policyFragment"
-        android:name="eramo.tahoon.presentation.ui.auth.PolicyFragment"
+        android:name="eramo.resultgate.presentation.ui.auth.PolicyFragment"
         android:label="PolicyFragment"
         tools:layout="@layout/fragment_policy"/>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="eramo.tahoon.presentation.ui.MainFragment"
+        android:name="eramo.resultgate.presentation.ui.MainFragment"
         android:label="MainFragment"
         tools:layout="@layout/fragment_main"/>
     <fragment
         android:id="@+id/forgetPasswordStepTwoFragment4"
-        android:name="eramo.tahoon.presentation.ui.auth.ForgetPasswordStepTwoFragment"
+        android:name="eramo.resultgate.presentation.ui.auth.ForgetPasswordStepTwoFragment"
         android:label="fragment_forget_password_step_two"
         tools:layout="@layout/fragment_forget_password_step_two" >
         <argument
@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgetPasswordStepThreeFragment"
-        android:name="eramo.tahoon.presentation.ui.auth.ForgetPasswordStepThreeFragment"
+        android:name="eramo.resultgate.presentation.ui.auth.ForgetPasswordStepThreeFragment"
         android:label="fragment_forget_password_step_three"
         tools:layout="@layout/fragment_forget_password_step_three" >
         <argument
@@ -69,7 +69,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpVerificationFragment"
-        android:name="eramo.tahoon.presentation.ui.auth.SignUpVerificationFragment"
+        android:name="eramo.resultgate.presentation.ui.auth.SignUpVerificationFragment"
         android:label="fragment_sign_up_verification"
         tools:layout="@layout/fragment_sign_up_verification" >
         <argument
@@ -87,10 +87,10 @@
     </fragment>
     <fragment
         android:id="@+id/contactUsAuthFragment"
-        android:name="eramo.tahoon.presentation.ui.auth.ContactUsAuthFragment"
+        android:name="eramo.resultgate.presentation.ui.auth.ContactUsAuthFragment"
         android:label="ContactUsAuthFragment" />
     <dialog
         android:id="@+id/deletedAccountDialogFragment"
-        android:name="eramo.tahoon.presentation.ui.dialog.DeletedAccountDialogFragment"
+        android:name="eramo.resultgate.presentation.ui.dialog.DeletedAccountDialogFragment"
         android:label="DeletedAccountDialogFragment" />
 </navigation>

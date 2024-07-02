@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="eramo.tahoon">
+    package="eramo.resultgate">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -18,7 +18,7 @@
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
 
     <application
-        android:name="eramo.tahoon.di.TahoonApplication"
+        android:name="eramo.resultgate.di.TahoonApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_deliveryyy"
@@ -29,7 +29,7 @@
         android:theme="@style/Theme.Takeefy"
         tools:replace="android:supportsRtl">
         <activity
-            android:name="eramo.tahoon.presentation.ui.MainActivity"
+            android:name="eramo.resultgate.presentation.ui.MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize"
             android:screenOrientation="portrait"
@@ -46,7 +46,7 @@
             android:theme="@style/Base.Theme.AppCompat" />
 
         <service
-            android:name="eramo.tahoon.util.notification.FirebaseMessageReceiver"
+            android:name="eramo.resultgate.util.notification.FirebaseMessageReceiver"
             android:permission="com.google.android.c2dm.permission.SEND"
             android:directBootAware="true"
             android:exported="false">
