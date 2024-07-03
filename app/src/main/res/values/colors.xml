@@ -37,7 +37,9 @@
     <color name="gray_low">#F1F1F1</color>
     <color name="light_gray">#4DD5D5D5</color>
     <color name="yellow">#B9A14A</color>
+    <color name="transparent">#00B94A4A</color>
     <color name="green">#2ECC71</color>
+    <color name="green_dark">#0B602F</color>
     <color name="red">#B61415</color>
     <color name="red_low">#F9EDED</color>
     <color name="green_low">#EFFBF4</color>

@@ -105,5 +105,9 @@ object AppModule {
     fun provideCartRepository(eramoApi: EramoApi, db: EramoDB,@ApplicationContext context:Context): CartRepository {
         return CartRepositoryImpl(eramoApi, db.dao,context )
     }
-
+    @Provides
+    @Singleton
+    fun provideTeamsRepository(eramoApi: EramoApi): TeamsRepository {
+        return TeamsRepositoryImpl(eramoApi)
+    }
 }

@@ -42,6 +42,7 @@ import eramo.resultgate.data.remote.dto.home.SpecialOffersResponse
 import eramo.resultgate.data.remote.dto.products.*
 import eramo.resultgate.data.remote.dto.products.orders.*
 import eramo.resultgate.data.remote.dto.products.search.PriceResponse
+import eramo.resultgate.data.remote.dto.teams.AllTeamsResponse
 import eramo.resultgate.domain.model.AuthApiBodySend
 import eramo.resultgate.domain.model.AuthApiResponseModel
 import eramo.resultgate.domain.model.checkout.CardPaymentKeyBodySendModel
@@ -527,6 +528,13 @@ interface EramoApi {
         @Field("term") term: String,
         @Field("page") page: String
     ): Response<HomeSearchResponse>
+
+    @FormUrlEncoded
+    @POST("all-teams")
+    suspend fun getALlTeams(
+        @Header("Authorization") userToken: String?,
+        @Query("page") page: String,
+    ): Response<AllTeamsResponse>
 
     @FormUrlEncoded
     @POST("home-page-search")

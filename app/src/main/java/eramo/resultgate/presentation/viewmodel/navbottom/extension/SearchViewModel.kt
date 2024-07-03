@@ -101,26 +101,6 @@ class SearchViewModel @Inject constructor(
 
     fun productSearch(title: String) {
         searchJob?.cancel()
-//        searchJob = viewModelScope.launch {
-//            delay(Constants.ANIMATION_DELAY)
-//            withContext(coroutineContext) {
-//                productsRepository.productSearch(title).collect { result ->
-//                    when (result) {
-//                        is Resource.Success -> {
-//                            _searchState.value = UiState.Success(result.data)
-//                        }
-//                        is Resource.Error -> {
-//                            _searchState.value =
-//                                UiState.Error(result.message!!)
-//                        }
-//                        is Resource.Loading -> {
-//                            _searchState.value = UiState.Loading()
-//                        }
-//                    }
-//                }
-//            }
-//        }
-
         searchJob = viewModelScope.launch {
             delay(Constants.ANIMATION_DELAY)
             withContext(coroutineContext) {

@@ -418,5 +418,16 @@
     <string name="you_must_buy_from_the_same_vendor">You must buy from the same vendor</string>
     <string name="symbl">Symbl</string>
     <string name="online_payment">Online Payment</string>
+    <string name="all_teams">Teams</string>
+    <string name="package_quantity">Package Quantity: </string>
+    <string name="cap_number">CAP Number:</string>
+    <string name="per_package">per package</string>
+    <string name="completed_small">completed</string>
+    <string name="left">Grams Left</string>
+    <string name="grams_bought">Grams Bought</string>
+    <string name="joined_members">Joined Members</string>
+    <string name="joined">Joined</string>
+    <string name="all_teamss">All Teams</string>
+    <string name="my_teams">My Teams</string>
 
 </resources>

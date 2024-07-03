@@ -146,10 +146,7 @@ class SearchFragment : Fragment(R.layout.fragment_search),
         lifecycleScope.launchWhenStarted {
             viewModel.filterState.collect { data ->
                 data?.let { it ->
-//                    productShopAdapter.submitData( it)
                     productShopAdapter.submitData(viewLifecycleOwner.lifecycle, it)
-//                    binding.FSearchRvProducts.scrollToPosition(0)
-
                     productShopAdapter.loadStateFlow.collect {
                         if (it.append is LoadState.NotLoading && it.append.endOfPaginationReached) {
                             if (productShopAdapter.itemCount < 1) {

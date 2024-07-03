@@ -216,6 +216,13 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 binding.mainDrawerLayout.closeDrawer(GravityCompat.START)
             }
 
+            navHeaderTvTeams.setOnClickListener(){
+                if (UserUtil.isUserLogin()) bottomNavController.navigate(R.id.contactUsFragment)
+                else bottomNavController.navigate(R.id.teamsFragment)
+
+                binding.mainDrawerLayout.closeDrawer(GravityCompat.START)
+            }
+
             navHeaderTvFaq.setOnClickListener {
                 if (UserUtil.isUserLogin()) bottomNavController.navigate(R.id.questionDetailsFragment)
                 else bottomNavController.navigate(R.id.loginDialog)
@@ -322,7 +329,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 R.id.suspendAccountDialog,
                 R.id.checkoutStepTwoFragment,
                 R.id.checkoutStepThreeFragment,
-                R.id.checkoutStepOneFragment -> {
+                R.id.checkoutStepOneFragment,
+                -> {
                     binding.apply {
                         mainBottomAppBar.visibility = View.GONE
                         mainFabHome.visibility = View.GONE
