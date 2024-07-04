@@ -217,8 +217,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             }
 
             navHeaderTvTeams.setOnClickListener(){
-                if (UserUtil.isUserLogin()) bottomNavController.navigate(R.id.contactUsFragment)
-                else bottomNavController.navigate(R.id.teamsFragment)
+                if (UserUtil.isUserLogin()) bottomNavController.navigate(R.id.teamsFragment)
+                else return@setOnClickListener
 
                 binding.mainDrawerLayout.closeDrawer(GravityCompat.START)
             }

@@ -51,6 +51,7 @@ class ShopFragment : Fragment(R.layout.fragment_shop),
 
     @Inject
     lateinit var productShopPagingAdapter: ProductShopPagingAdapter
+
     private lateinit var binding: FragmentShopBinding
     private val viewModel by viewModels<ShopViewModel>()
     private val viewModelShared: SharedViewModel by activityViewModels()

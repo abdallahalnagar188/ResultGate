@@ -53,18 +53,18 @@ class AllCategoryAdapter @Inject constructor() :
         fun onCategoryClick(model: HomeCategoriesResponse.Data)
     }
 
-    //check difference
-    companion object {
-        private val PRODUCT_COMPARATOR = object : DiffUtil.ItemCallback<HomeCategoriesResponse.Data>() {
-            override fun areItemsTheSame(
-                oldItem: HomeCategoriesResponse.Data,
-                newItem: HomeCategoriesResponse.Data
-            ) = oldItem == newItem
+        //check difference
+        companion object {
+            private val PRODUCT_COMPARATOR = object : DiffUtil.ItemCallback<HomeCategoriesResponse.Data>() {
+                override fun areItemsTheSame(
+                    oldItem: HomeCategoriesResponse.Data,
+                    newItem: HomeCategoriesResponse.Data
+                ) = oldItem == newItem
 
-            override fun areContentsTheSame(
-                oldItem: HomeCategoriesResponse.Data,
-                newItem: HomeCategoriesResponse.Data
-            ) = oldItem == newItem
+                override fun areContentsTheSame(
+                    oldItem: HomeCategoriesResponse.Data,
+                    newItem: HomeCategoriesResponse.Data
+                ) = oldItem == newItem
+            }
         }
-    }
 }

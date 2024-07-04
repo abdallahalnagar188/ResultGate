@@ -416,11 +416,6 @@ class ProductsRepositoryImpl(
                     is ApiState.Error -> emit(Resource.Error(apiState.message!!))
                     is ApiState.Success -> {
                         val list = apiState.data?.data?.map { it!!.toMyProductModel() }
-//                        val list = apiState.data?.allProducts?.map { it.toProductModel() }
-//                        val endTime = apiState.data?.latestDeals
-//                        val map = HashMap<String, Any>()
-//                        map["list"] = list as List<ProductModel>
-//                        map["endTime"] = endTime as String
                         emit(Resource.Success(list))
                     }
                 }

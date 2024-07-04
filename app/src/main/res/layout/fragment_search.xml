@@ -50,7 +50,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/no_data" />
+        app:lottie_rawRes="@raw/no_data"
+        android:visibility="gone"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/FSearch_rv_products"
         android:layout_width="0dp"

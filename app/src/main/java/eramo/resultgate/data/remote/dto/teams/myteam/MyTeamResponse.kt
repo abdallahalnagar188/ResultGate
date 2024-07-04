@@ -1,4 +1,4 @@
-package eramo.resultgate.data.remote.dto.teams
+package eramo.resultgate.data.remote.dto.teams.myteam
 
 
 import android.os.Parcelable
@@ -7,23 +7,13 @@ import eramo.resultgate.domain.model.teams.TeamsModel
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class AllTeamsResponse(
+data class MyTeamResponse(
     @SerializedName("data")
     var `data`: Data?,
     @SerializedName("message")
     var message: String?,
     @SerializedName("status")
     var status: Int?
-) : Parcelable
-
-@Parcelize
-data class Data(
-    @SerializedName("data")
-    var `data`: List<DataX>?,
-    @SerializedName("links")
-    var links: Links?,
-    @SerializedName("meta")
-    var meta: Meta?
 ) : Parcelable
 
 @Parcelize
@@ -50,6 +40,8 @@ data class DataX(
     var joinedMembers: Int?,
     @SerializedName("name")
     var name: String?,
+    @SerializedName("primary_image")
+    var primaryImage: String?,
     @SerializedName("real_price")
     var realPrice: String?,
     @SerializedName("remaining_grams")
@@ -57,11 +49,9 @@ data class DataX(
     @SerializedName("researcher")
     var researcher: String?,
     @SerializedName("status")
-    var status: String?,
-    @SerializedName("primary_image")
-    val primaryImage: String?
+    var status: String?
 ) : Parcelable{
-    fun toTeamModel():TeamsModel{
+    fun toTeamModel(): TeamsModel {
         return TeamsModel(
             cap = cap?:-1,
             completed = completed?:-1,
@@ -80,47 +70,11 @@ data class DataX(
             status = status?:"",
             primaryImage = primaryImage?:""
         )
-    }
+}
 }
 
 @Parcelize
-data class Link(
-    @SerializedName("active")
-    var active: Boolean?,
-    @SerializedName("label")
-    var label: String?,
-    @SerializedName("url")
-    var url: String?
-) : Parcelable
-
-@Parcelize
-data class Meta(
-    @SerializedName("current_page")
-    var currentPage: Int?,
-    @SerializedName("from")
-    var from: Int?,
-    @SerializedName("last_page")
-    var lastPage: Int?,
-    @SerializedName("links")
-    var links: List<Link?>?,
-    @SerializedName("path")
-    var path: String?,
-    @SerializedName("per_page")
-    var perPage: Int?,
-    @SerializedName("to")
-    var to: Int?,
-    @SerializedName("total")
-    var total: Int?
-) : Parcelable
-
-@Parcelize
-data class Links(
-    @SerializedName("first")
-    var first: String?,
-    @SerializedName("last")
-    var last: String?,
-    @SerializedName("next")
-    var next: String?,
-    @SerializedName("prev")
-    var prev: String?
+data class Data(
+    @SerializedName("data")
+    var `data`: List<DataX>?
 ) : Parcelable

@@ -212,10 +212,7 @@ class SearchFragment : Fragment(R.layout.fragment_search),
 //                    }
 
                 }
-                data.let {
-                        binding.lottieNoData.visibility = View.VISIBLE
 
-                }
             }
         }
     }

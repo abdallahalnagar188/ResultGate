@@ -411,5 +411,6 @@
     <string name="joined_members">Joined Members</string>
     <string name="joined">Joined</string>
     <string name="all_teamss">All Teams</string>
+    <string name="my_teams">My Teams</string>
 
 </resources>
