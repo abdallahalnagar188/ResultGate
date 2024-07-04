@@ -43,6 +43,8 @@ import eramo.resultgate.data.remote.dto.products.*
 import eramo.resultgate.data.remote.dto.products.orders.*
 import eramo.resultgate.data.remote.dto.products.search.PriceResponse
 import eramo.resultgate.data.remote.dto.teams.AllTeamsResponse
+import eramo.resultgate.data.remote.dto.teams.deleteteam.ExitTeamResponse
+import eramo.resultgate.data.remote.dto.teams.jointeam.JoinTeamResponse
 import eramo.resultgate.data.remote.dto.teams.myteam.MyTeamResponse
 import eramo.resultgate.domain.model.AuthApiBodySend
 import eramo.resultgate.domain.model.AuthApiResponseModel
@@ -521,6 +523,22 @@ interface EramoApi {
 //    suspend fun productSearch(
 //        @Query("key") productName: String,
 //    ): Response<MyHomePageSearchResponse2>
+
+
+    @FormUrlEncoded
+    @POST("join-team")
+    suspend fun joinTeam(
+        @Header("Authorization") userToken: String?,
+        @Field("team_id") teamId: Int,
+        @Field("grams") grams: Int
+    ): Response<JoinTeamResponse>
+
+    @DELETE("team/delete-request/{teamId}")
+    suspend fun deleteTeam(
+        @Header("Authorization") userToken: String?,
+        @Path("teamId") teamId: Int
+    ): Response<ExitTeamResponse>
+
 
     @FormUrlEncoded
     @POST("home-page-search")

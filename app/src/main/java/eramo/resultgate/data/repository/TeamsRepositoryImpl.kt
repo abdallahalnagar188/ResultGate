@@ -3,6 +3,8 @@ package eramo.resultgate.data.repository
 import androidx.paging.Pager
 import androidx.paging.PagingData
 import eramo.resultgate.data.remote.EramoApi
+import eramo.resultgate.data.remote.dto.teams.deleteteam.ExitTeamResponse
+import eramo.resultgate.data.remote.dto.teams.jointeam.JoinTeamResponse
 import eramo.resultgate.data.remote.dto.teams.myteam.MyTeamResponse
 import eramo.resultgate.data.remote.paging.PagingAllTeams
 import eramo.resultgate.domain.model.teams.TeamsModel
@@ -33,6 +35,45 @@ class TeamsRepositoryImpl @Inject constructor(
             val result = toResultFlow {
                 eramoApi.getMyTeams(
                     if (UserUtil.isUserLogin()) "Bearer ${UserUtil.getUserToken()}" else null
+                )
+            }
+            result.collect(){apiState->
+                when (apiState) {
+                    is ApiState.Loading -> emit(Resource.Loading())
+                    is ApiState.Error -> emit(Resource.Error(apiState.message!!))
+                    is ApiState.Success -> { emit(Resource.Success(apiState.data)) }
+                }
+
+            }
+        }
+    }
+
+    override suspend fun joinTeam(teamId: Int, grams: Int): Flow<Resource<JoinTeamResponse>> {
+        return flow {
+            val result = toResultFlow {
+                eramoApi.joinTeam(
+                    if (UserUtil.isUserLogin()) "Bearer ${UserUtil.getUserToken()}" else null,
+                    teamId = teamId,
+                    grams = grams
+                )
+            }
+            result.collect(){apiState->
+                when (apiState) {
+                    is ApiState.Loading -> emit(Resource.Loading())
+                    is ApiState.Error -> emit(Resource.Error(apiState.message!!))
+                    is ApiState.Success -> { emit(Resource.Success(apiState.data)) }
+                }
+
+            }
+        }
+    }
+
+    override suspend fun exitTeam(teamId: Int): Flow<Resource<ExitTeamResponse>> {
+        return flow {
+            val result = toResultFlow {
+                eramoApi.deleteTeam(
+                    if (UserUtil.isUserLogin()) "Bearer ${UserUtil.getUserToken()}" else null,
+                    teamId = teamId,
                 )
             }
             result.collect(){apiState->

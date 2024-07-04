@@ -429,5 +429,9 @@
     <string name="joined">Joined</string>
     <string name="all_teamss">All Teams</string>
     <string name="my_teams">My Teams</string>
+    <string name="amount">Amount:</string>
+    <string name="please_provide_a_quantity">Please provide a quantity</string>
+    <string name="you_exited_successfully">You exited Successfully</string>
+    <string name="team_joined_successfully">Team Joined Successfully</string>
 
 </resources>

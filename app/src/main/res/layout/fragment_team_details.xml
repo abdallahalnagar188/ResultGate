@@ -195,7 +195,7 @@
                 app:trackColorActive="@color/green"
                 app:trackColorInactive="#7D7A7A"
                 app:trackHeight="@dimen/_5sdp"
-
+                android:layout_marginTop="@dimen/_10sdp"
                 />
             <TextView
                 android:id="@+id/tv_joined_text"
@@ -349,7 +349,8 @@
                 app:cardCornerRadius="@dimen/_10sdp"
                 android:backgroundTint="@color/white"
                 app:strokeWidth="1dp"
-                app:strokeColor="@color/red">
+                app:strokeColor="@color/red"
+                android:visibility="gone">
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -368,7 +369,42 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/amount"
+                app:layout_constraintStart_toStartOf="@id/join_team_cardview"
+                app:layout_constraintTop_toBottomOf="@+id/join_team_cardview"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_5sdp"/>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/itl_amount"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:textColorHint="@color/gray"
+                app:hintEnabled="false"
+                app:layout_constraintStart_toStartOf="@+id/join_team_cardview"
+                app:layout_constraintEnd_toEndOf="@+id/join_team_cardview"
+                app:layout_constraintTop_toBottomOf="@id/tv_amount">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/stroke_blue_radius"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:fontFamily="@font/ibmplexsansregular"
+                    android:inputType="number"
+                    android:maxLength="30"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@null" />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
