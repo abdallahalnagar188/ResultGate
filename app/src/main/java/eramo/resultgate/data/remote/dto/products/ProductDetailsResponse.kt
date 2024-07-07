@@ -118,7 +118,11 @@ data class ProductDetailsResponse(
         @SerializedName("sizes")
         val sizes: List<Size?>?,
         @SerializedName("stocks")
-        val stocks: List<Stocks?>?
+        val stocks: List<Stocks?>?,
+        @SerializedName("product_type")
+        val productType: String?,
+        @SerializedName("vendor_phone")
+        val vendorPhone: String?,
 
     ) {
         data class Stocks(

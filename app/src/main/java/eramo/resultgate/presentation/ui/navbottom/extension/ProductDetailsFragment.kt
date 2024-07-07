@@ -1,8 +1,12 @@
 package eramo.resultgate.presentation.ui.navbottom.extension
 
+import android.R.attr.phoneNumber
+import android.R.id.message
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Paint
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
@@ -10,6 +14,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.net.ParseException
@@ -40,6 +45,7 @@ import eramo.resultgate.util.state.UiState
 import org.json.JSONArray
 import org.json.JSONObject
 import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class ProductDetailsFragment : Fragment(R.layout.fragment_product_details),
@@ -89,7 +95,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details),
             viewModel.cartData()
         }
 
-        Log.e("productId", productId)
+        Log.e("product_type", productId)
 
         productMoreAdapter.setListener(this)
         binding.apply {
@@ -104,7 +110,18 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details),
                     ).toBundle()
                 )
             }
-
+            whatsappBtn.setOnClickListener(){
+                try {
+                    // WhatsApp URI with phone number and message
+                    val uri = Uri.parse("https://api.whatsapp.com/send?phone=" + productModel.data?.get(0)?.vendorPhone + "&text=" + Uri.encode("Hi, I'm interested in your product"))
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    intent.setPackage("com.whatsapp")
+                    startActivity(intent)
+                } catch (e: ActivityNotFoundException) {
+                    // WhatsApp is not installed
+                    Toast.makeText(requireContext(), "WhatsApp is not installed on your device", Toast.LENGTH_SHORT).show()
+                }
+            }
             FDProductIvShare.setOnClickListener {
                 setupShare()
             }
@@ -475,12 +492,14 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details),
             viewModel.productState.collect { state ->
                 when (state) {
                     is UiState.Success -> {
-                        LoadingDialog.dismissDialog()
                         binding.root.visibility = View.VISIBLE
                         productModel = state.data!!
+                        handleUI(productModel)
                         setupBuyWithActions()
                         setupSwitchedData()
                         setupProductInfo()
+                        LoadingDialog.dismissDialog()
+
                     }
 
                     is UiState.Error -> {
@@ -502,6 +521,29 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details),
 
                     else -> Unit
                 }
+            }
+        }
+    }
+
+    private fun handleUI(productModel: ProductDetailsResponse) {
+        if (productModel.data?.get(0)?.productType == "product"){
+            binding.apply {
+                FDProductTvAddToCart.visibility = View.VISIBLE
+                FDProductBtnBuy.visibility = View.VISIBLE
+                FDProductTvShipping.visibility = View.VISIBLE
+                binding.whatsappBtn.visibility = View.INVISIBLE
+                view3.visibility = View.VISIBLE
+            }
+
+        }else if (productModel.data?.get(0)?.productType == "device"){
+            binding.apply {
+                FDProductTvAddToCart.visibility = View.INVISIBLE
+                FDProductBtnBuy.visibility = View.INVISIBLE
+                FDProductTvShipping.visibility = View.INVISIBLE
+                binding.whatsappBtn.visibility = View.VISIBLE
+                view3.visibility = View.INVISIBLE
+
+
             }
         }
     }

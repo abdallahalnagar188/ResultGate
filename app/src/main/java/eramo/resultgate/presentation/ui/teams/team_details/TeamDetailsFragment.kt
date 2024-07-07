@@ -28,10 +28,11 @@ import eramo.resultgate.util.state.UiState
 class TeamDetailsFragment : Fragment() {
     private lateinit var binding: FragmentTeamDetailsBinding
     private val args by navArgs<TeamDetailsFragmentArgs>()
+    val model get() = args.team
+
     val viewModel by viewModels<TeamsViewModel>()
     private val viewModelShared: SharedViewModel by activityViewModels()
 
-    val model get() = args.team
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -88,7 +89,6 @@ class TeamDetailsFragment : Fragment() {
                         if (it.data?.status == 200){
                             Toast.makeText(requireContext(), getString(R.string.you_exited_successfully), Toast.LENGTH_SHORT).show()
                             findNavController().popBackStack()
-                            viewModel.teamDetails(model.id)
                         }else{
                             Toast.makeText(requireContext(), getString(R.string.you_can_t_exit_the_team), Toast.LENGTH_SHORT).show()
                         }
@@ -150,6 +150,12 @@ class TeamDetailsFragment : Fragment() {
             }
         }
     }
+    //The whole idea and diff is when u first enter the screen no need to fetch data from API
+    // You just take what was in the prev screen and set it to the UI initViews()
+    // handleUI() is when some request happens, and you need to update the UI like join or cancel
+    // is just the same when takes "model" from prev screen one takes "data" from API
+    //Ahmed Hussin sends his regards.
+
     private fun handleUI(data: TeamsModel) {
         binding.apply {
             tvTeamName.text = data.name
@@ -160,7 +166,7 @@ class TeamDetailsFragment : Fragment() {
                 append(data.completed.toString())
                 append("%")
             }
-
+            amountOrderdValue.text = data.gramsOrderdBefore.toString()
             etAmount.setText(data.gramsOrderdBefore.toString())
 
             // Set the range values
@@ -244,6 +250,7 @@ class TeamDetailsFragment : Fragment() {
             rangeSlider.setValues(0.0f,model.gramsBought.toFloat())
 
             etAmount.setText(model.gramsOrderdBefore.toString())
+            amountOrderdValue.text = model.gramsOrderdBefore.toString()
 
             joinedValue.text = model.joinedMembers.toString()
             tvLeftValue.text = model.remainingGrams.toInt().toString()
@@ -251,9 +258,7 @@ class TeamDetailsFragment : Fragment() {
             tvDescriptionContent.text = model.details
 //            etAmount.text = model.gramsBought.toString()
             Glide.with(requireContext()).load(model.primaryImage).into(ivTeam)
-            rangeSlider.setOnTouchListener { v, event ->
-                true
-            }
+            rangeSlider.setOnTouchListener { v, event -> true }
             if (model.isCompleted&&model.isJoined){
                 // no cancel and joined green button
                 joinedCardview.visibility = View.VISIBLE
@@ -263,6 +268,8 @@ class TeamDetailsFragment : Fragment() {
                 tvAmount.visibility = View.GONE
                 itlAmount.visibility = View.GONE
                 etAmount.visibility = View.GONE
+                amountOrderdValue.visibility = View.VISIBLE
+                tvAmountOrdered.visibility = View.VISIBLE
 
 
             }
@@ -305,6 +312,8 @@ class TeamDetailsFragment : Fragment() {
         }
 
     }
+
+
     private fun setupToolbar() {
         binding.apply {
             inTbLayout.toolbarIvMenu.setOnClickListener {

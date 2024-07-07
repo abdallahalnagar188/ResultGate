@@ -377,6 +377,30 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_team_name"
                 app:layout_constraintEnd_toEndOf="parent"/>
             <TextView
+                android:id="@+id/tv_amount_ordered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/amount_orderd"
+                app:layout_constraintStart_toStartOf="@id/placeHolder"
+                app:layout_constraintTop_toBottomOf="@+id/placeHolder"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:visibility="gone"/>
+            <TextView
+                android:id="@+id/amount_orderd_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tv_amount_ordered"
+                app:layout_constraintTop_toBottomOf="@+id/tv_amount_ordered"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:visibility="gone"
+                />
+            <TextView
                 android:id="@+id/tv_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

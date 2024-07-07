@@ -419,5 +419,7 @@
     <string name="edit_amount">Edit Amount</string>
     <string name="invalid_amount">Invalid amount</string>
     <string name="you_can_t_exit_the_team">You can\'t exit the team</string>
+    <string name="amount_orderd">Amount Orderd</string>
+    <string name="whatsapp">WHATSAPP</string>
 
 </resources>
