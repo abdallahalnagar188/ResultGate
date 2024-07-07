@@ -416,5 +416,8 @@
     <string name="please_provide_a_quantity">Please provide a quantity</string>
     <string name="you_exited_successfully">You exited Successfully</string>
     <string name="team_joined_successfully">Team Joined Successfully</string>
+    <string name="edit_amount">Edit Amount</string>
+    <string name="invalid_amount">Invalid amount</string>
+    <string name="you_can_t_exit_the_team">You can\'t exit the team</string>
 
 </resources>

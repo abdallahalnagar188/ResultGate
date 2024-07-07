@@ -1,4 +1,4 @@
-package eramo.resultgate.data.remote.dto.teams.myteam
+package eramo.resultgate.data.remote.dto.teams.teamdetails
 
 
 import android.os.Parcelable
@@ -7,7 +7,7 @@ import eramo.resultgate.domain.model.teams.TeamsModel
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class MyTeamResponse(
+data class TeamDetailsResponse(
     @SerializedName("data")
     var `data`: Data?,
     @SerializedName("message")
@@ -17,7 +17,7 @@ data class MyTeamResponse(
 ) : Parcelable
 
 @Parcelize
-data class DataX(
+data class Data(
     @SerializedName("cap")
     var cap: Int?,
     @SerializedName("completed")
@@ -30,6 +30,8 @@ data class DataX(
     var grams: Int?,
     @SerializedName("grams_bought")
     var gramsBought: Int?,
+    @SerializedName("grams_orderd_before")
+    var gramsOrderdBefore: Int?,
     @SerializedName("id")
     var id: Int?,
     @SerializedName("is_completed")
@@ -49,9 +51,7 @@ data class DataX(
     @SerializedName("researcher")
     var researcher: String?,
     @SerializedName("status")
-    var status: String?,
-    @SerializedName("grams_orderd_before")
-    val gramsOrderdBefore: Int?,
+    var status: String?
 ) : Parcelable{
     fun toTeamModel(): TeamsModel {
         return TeamsModel(
@@ -73,11 +73,6 @@ data class DataX(
             primaryImage = primaryImage?:"",
             gramsOrderdBefore = gramsOrderdBefore?:0
         )
-}
-}
+    }
 
-@Parcelize
-data class Data(
-    @SerializedName("data")
-    var `data`: List<DataX>?
-) : Parcelable
+}

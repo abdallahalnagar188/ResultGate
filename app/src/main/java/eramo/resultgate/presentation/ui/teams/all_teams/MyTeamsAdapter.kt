@@ -21,8 +21,16 @@ class MyTeamsAdapter @Inject constructor(): ListAdapter<TeamsModel, MyTeamsAdapt
                 tvPackageQuantityValue.text = model.grams.toInt().toString()
                 tvCapNumberValue.text = model.cap.toString()
                 tvPrice.text = model.realPrice
-                tvCompleteValue.text = model.completed.toString()
+                tvCompleteValue.text =buildString {
+                    append(model.completed.toString())
+                    append("%")
+                }
+
+                rangeSlider.valueFrom = 0f
+                rangeSlider.valueTo = model.gramsBought.toFloat()+model.remainingGrams.toFloat()
                 rangeSlider.setValues(0.0f,model.gramsBought.toFloat())
+
+
                 joinedValue.text = model.joinedMembers.toString()
                 tvLeftValue.text = model.remainingGrams.toInt().toString()
                 tvBoughtValue.text = model.gramsBought.toInt().toString()

@@ -6,6 +6,7 @@ import eramo.resultgate.data.remote.EramoApi
 import eramo.resultgate.data.remote.dto.teams.deleteteam.ExitTeamResponse
 import eramo.resultgate.data.remote.dto.teams.jointeam.JoinTeamResponse
 import eramo.resultgate.data.remote.dto.teams.myteam.MyTeamResponse
+import eramo.resultgate.data.remote.dto.teams.teamdetails.TeamDetailsResponse
 import eramo.resultgate.data.remote.paging.PagingAllTeams
 import eramo.resultgate.domain.model.teams.TeamsModel
 import eramo.resultgate.domain.repository.TeamsRepository
@@ -72,6 +73,25 @@ class TeamsRepositoryImpl @Inject constructor(
         return flow {
             val result = toResultFlow {
                 eramoApi.deleteTeam(
+                    if (UserUtil.isUserLogin()) "Bearer ${UserUtil.getUserToken()}" else null,
+                    teamId = teamId,
+                )
+            }
+            result.collect(){apiState->
+                when (apiState) {
+                    is ApiState.Loading -> emit(Resource.Loading())
+                    is ApiState.Error -> emit(Resource.Error(apiState.message!!))
+                    is ApiState.Success -> { emit(Resource.Success(apiState.data)) }
+                }
+
+            }
+        }
+    }
+
+    override suspend fun teamDetails(teamId: Int): Flow<Resource<TeamDetailsResponse>> {
+        return flow {
+            val result = toResultFlow {
+                eramoApi.teamDetails(
                     if (UserUtil.isUserLogin()) "Bearer ${UserUtil.getUserToken()}" else null,
                     teamId = teamId,
                 )

@@ -46,6 +46,7 @@ import eramo.resultgate.data.remote.dto.teams.AllTeamsResponse
 import eramo.resultgate.data.remote.dto.teams.deleteteam.ExitTeamResponse
 import eramo.resultgate.data.remote.dto.teams.jointeam.JoinTeamResponse
 import eramo.resultgate.data.remote.dto.teams.myteam.MyTeamResponse
+import eramo.resultgate.data.remote.dto.teams.teamdetails.TeamDetailsResponse
 import eramo.resultgate.domain.model.AuthApiBodySend
 import eramo.resultgate.domain.model.AuthApiResponseModel
 import eramo.resultgate.domain.model.checkout.CardPaymentKeyBodySendModel
@@ -532,6 +533,12 @@ interface EramoApi {
         @Field("team_id") teamId: Int,
         @Field("grams") grams: Int
     ): Response<JoinTeamResponse>
+
+    @GET("teams/{teamId}")
+    suspend fun teamDetails(
+        @Header("Authorization") userToken: String?,
+        @Path("teamId") teamId: Int
+    ): Response<TeamDetailsResponse>
 
     @DELETE("team/delete-request/{teamId}")
     suspend fun deleteTeam(

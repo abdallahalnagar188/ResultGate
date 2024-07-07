@@ -422,7 +422,7 @@
     <string name="package_quantity">Package Quantity: </string>
     <string name="cap_number">CAP Number:</string>
     <string name="per_package">per package</string>
-    <string name="completed_small">completed</string>
+    <string name="completed_small">Completed</string>
     <string name="left">Grams Left</string>
     <string name="grams_bought">Grams Bought</string>
     <string name="joined_members">Joined Members</string>
@@ -433,5 +433,8 @@
     <string name="please_provide_a_quantity">Please provide a quantity</string>
     <string name="you_exited_successfully">You exited Successfully</string>
     <string name="team_joined_successfully">Team Joined Successfully</string>
+    <string name="edit_amount">Edit Amount</string>
+    <string name="invalid_amount">Invalid amount</string>
+    <string name="you_can_t_exit_the_team">You can\'t exit the team</string>
 
 </resources>

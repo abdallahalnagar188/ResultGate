@@ -59,7 +59,9 @@ data class DataX(
     @SerializedName("status")
     var status: String?,
     @SerializedName("primary_image")
-    val primaryImage: String?
+    val primaryImage: String?,
+    @SerializedName("grams_orderd_before")
+    val gramsOrderdBefore: Int?,
 ) : Parcelable{
     fun toTeamModel():TeamsModel{
         return TeamsModel(
@@ -78,7 +80,8 @@ data class DataX(
             remainingGrams = remainingGrams?:-1,
             researcher = researcher?:"",
             status = status?:"",
-            primaryImage = primaryImage?:""
+            primaryImage = primaryImage?:"",
+            gramsOrderdBefore = gramsOrderdBefore?:0
         )
     }
 }

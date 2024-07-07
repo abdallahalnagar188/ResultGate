@@ -9,6 +9,7 @@ import eramo.resultgate.data.remote.dto.teams.AllTeamsResponse
 import eramo.resultgate.data.remote.dto.teams.deleteteam.ExitTeamResponse
 import eramo.resultgate.data.remote.dto.teams.jointeam.JoinTeamResponse
 import eramo.resultgate.data.remote.dto.teams.myteam.MyTeamResponse
+import eramo.resultgate.data.remote.dto.teams.teamdetails.TeamDetailsResponse
 import eramo.resultgate.domain.model.teams.TeamsModel
 import eramo.resultgate.domain.repository.TeamsRepository
 import eramo.resultgate.util.state.Resource
@@ -35,11 +36,15 @@ class TeamsViewModel @Inject constructor(
     private val _exitTeamState = MutableStateFlow<UiState<ExitTeamResponse>?>(null)
     val exitTeamState: MutableStateFlow<UiState<ExitTeamResponse>?> = _exitTeamState
 
+    private val _teamDetailsState = MutableStateFlow<UiState<TeamDetailsResponse>?>(null)
+    val teamDetails: MutableStateFlow<UiState<TeamDetailsResponse>?> = _teamDetailsState
+
 
     private var getAllTeamsJob: Job? = null
     private var getMyTeamsJob: Job? = null
     private var joinTeamJob: Job? = null
     private var exitTeamJob: Job? = null
+    private var teamDetailsJob:Job? = null
 
     fun getAllTeams() {
         getAllTeamsJob?.cancel()
@@ -93,8 +98,8 @@ class TeamsViewModel @Inject constructor(
         }
     }
     fun exitTeam(teamId: Int){
-        joinTeamJob?.cancel()
-        joinTeamJob = viewModelScope.launch {
+        exitTeamJob?.cancel()
+        exitTeamJob = viewModelScope.launch {
             withContext(coroutineContext){
                 teamsRepository.exitTeam(teamId).collect(){
                     when(it){
@@ -106,6 +111,27 @@ class TeamsViewModel @Inject constructor(
                         }
                         is Resource.Loading-> {
                             _exitTeamState.value = UiState.Loading()
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+    fun teamDetails(teamId: Int){
+        teamDetailsJob?.cancel()
+        teamDetailsJob = viewModelScope.launch {
+            withContext(coroutineContext){
+                teamsRepository.teamDetails(teamId).collect(){
+                    when(it){
+                        is Resource.Success->{
+                            _teamDetailsState.value = UiState.Success(it.data)
+                        }
+                        is Resource.Error->{
+                            _teamDetailsState.value = UiState.Error(it.message!!)
+                        }
+                        is Resource.Loading-> {
+                            _teamDetailsState.value = UiState.Loading()
                         }
                     }
 

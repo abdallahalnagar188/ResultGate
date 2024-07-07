@@ -20,6 +20,7 @@ data class TeamsModel (
     var remainingGrams: Int,
     var researcher: String,
     var status: String,
-    val primaryImage: String
+    val primaryImage: String,
+    val gramsOrderdBefore: Int,
 
 ) : Parcelable

@@ -140,7 +140,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/tv_complete_value"
                 app:layout_constraintStart_toStartOf="@id/tv_team_name"
-                android:text="240"
+                tools:text="240"
                 android:textColor="@color/green"
                 android:textSize="@dimen/_10ssp"
                 android:layout_marginTop="@dimen/_6sdp"
@@ -184,9 +184,7 @@
                 android:id="@+id/range_Slider"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:valueFrom="0"
-                android:valueTo="100"
-                app:layout_constraintTop_toBottomOf="@id/tv_left"
+                app:layout_constraintTop_toBottomOf="@id/cancel_cardview"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:thumbRadius="0dp"
@@ -344,13 +342,16 @@
                 android:id="@+id/cancel_cardview"
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_50sdp"
-                app:layout_constraintBottom_toTopOf="@id/range_Slider"
+                app:layout_constraintTop_toBottomOf="@+id/amount_holder"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:cardCornerRadius="@dimen/_10sdp"
                 android:backgroundTint="@color/white"
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/red"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_14sdp"
+                >
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -369,13 +370,19 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
+            <View
+                android:id="@+id/placeHolder"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_50sdp"
+                app:layout_constraintTop_toBottomOf="@id/tv_team_name"
+                app:layout_constraintEnd_toEndOf="parent"/>
             <TextView
                 android:id="@+id/tv_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/amount"
-                app:layout_constraintStart_toStartOf="@id/join_team_cardview"
-                app:layout_constraintTop_toBottomOf="@+id/join_team_cardview"
+                app:layout_constraintStart_toStartOf="@id/placeHolder"
+                app:layout_constraintTop_toBottomOf="@+id/placeHolder"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="@dimen/_13sdp"
@@ -405,7 +412,14 @@
                     android:textColor="@color/black"
                     android:textCursorDrawable="@null" />
             </com.google.android.material.textfield.TextInputLayout>
-
+        <View
+            android:id="@+id/amount_holder"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintStart_toStartOf="@+id/join_team_cardview"
+            app:layout_constraintEnd_toEndOf="@+id/join_team_cardview"
+            app:layout_constraintTop_toBottomOf="@id/tv_amount"
+         />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
