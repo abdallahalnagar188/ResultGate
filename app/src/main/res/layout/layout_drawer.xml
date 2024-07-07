@@ -240,7 +240,7 @@
             android:text="@string/all_teams"
             android:textColor="@color/black_low"
             android:textSize="@dimen/_14ssp"
-            app:drawableStartCompat="@drawable/ic_recaptcha"
+            app:drawableStartCompat="@drawable/ic_team"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/navHeader_iv_profile"
             app:layout_constraintTop_toBottomOf="@+id/navHeader_tv_myAccount" />
