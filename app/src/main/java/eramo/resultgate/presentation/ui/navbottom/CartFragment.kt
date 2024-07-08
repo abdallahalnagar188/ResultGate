@@ -537,7 +537,6 @@ class CartFragment : Fragment(R.layout.fragment_cart),
                 model.id.toString(), model.quantity.toString(),
                 model.extras ?: emptyList()
             )
-
             extrasBottomSheetDialogFragment.setListener(this@CartFragment)
             extrasBottomSheetDialogFragment.show(
                 activity?.supportFragmentManager!!,

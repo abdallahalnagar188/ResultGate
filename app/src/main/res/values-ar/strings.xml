@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tahoon</string>
+    <string name="app_name">Result Gate</string>
 
 <!--    <string name="powered_by">© E-RAMO STORE 2023 | تم التطوير\n بواسطة E-RAMO نسخة 1.5.3</string>-->
     <string name="are_you_sure_to_cancel">هل أنت متأكد من الإلغاء؟</string>
@@ -402,24 +402,26 @@
     <string name="symbl">سيمبل</string>
     <string name="online_payment">اون لاين</string>
     <string name="all_teams">المجموعات</string>
-    <string name="package_quantity">Package Quantity</string>
-    <string name="cap_number">CAP Number:</string>
-    <string name="per_package">Per Package</string>
-    <string name="completed_small">Completed</string>
-    <string name="left">left</string>
-    <string name="grams_bought">Grams Bought</string>
-    <string name="joined_members">Joined Members</string>
-    <string name="joined">Joined</string>
-    <string name="all_teamss">All Teams</string>
-    <string name="my_teams">My Teams</string>
-    <string name="amount">Amount:</string>
-    <string name="please_provide_a_quantity">Please provide a quantity</string>
-    <string name="you_exited_successfully">You exited Successfully</string>
-    <string name="team_joined_successfully">Team Joined Successfully</string>
-    <string name="edit_amount">Edit Amount</string>
-    <string name="invalid_amount">Invalid amount</string>
-    <string name="you_can_t_exit_the_team">You can\'t exit the team</string>
-    <string name="amount_orderd">Amount Orderd</string>
-    <string name="whatsapp">WHATSAPP</string>
+    <string name="package_quantity">الكمية: </string>
+    <string name="cap_number">:CAP Number</string>
+    <string name="per_package">لكل منتج</string>
+    <string name="completed_small">أستكملت</string>
+    <string name="left">باقي</string>
+    <string name="grams_bought">تم شراءه</string>
+    <string name="joined_members">الاعضاء المنضمين</string>
+    <string name="joined">منضم</string>
+    <string name="all_teamss">كل المجموعات</string>
+    <string name="my_teams">مجموعاتي</string>
+    <string name="amount">الكمية:</string>
+    <string name="please_provide_a_quantity">ادخل كمية</string>
+    <string name="you_exited_successfully">تم الخروج</string>
+    <string name="team_joined_successfully">تم الالتحاق</string>
+    <string name="edit_amount">تغير الكمية</string>
+    <string name="invalid_amount"> كمية خطئ</string>
+    <string name="you_can_t_exit_the_team">لا يمكنك الخروج</string>
+    <string name="amount_orderd">الكمية المطلوبه</string>
+    <string name="whatsapp">واتساب</string>
+    <string name="join_team">انضم</string>
+    <string name="completedd">مكتمل</string>
 
 </resources>

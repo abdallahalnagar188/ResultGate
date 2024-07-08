@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tahoon</string>
+    <string name="app_name">Result Gate</string>
 
     <string name="powered_by" translatable="false">© Bellout 2024 | Developed\n BY e-RAMO V 1.6.0</string>
     <string name="cancel">Cancel</string>
@@ -419,6 +419,7 @@
     <string name="symbl">Symbl</string>
     <string name="online_payment">Online Payment</string>
     <string name="all_teams">Teams</string>
+
     <string name="package_quantity">Package Quantity: </string>
     <string name="cap_number">CAP Number:</string>
     <string name="per_package">per package</string>
@@ -438,5 +439,7 @@
     <string name="you_can_t_exit_the_team">You can\'t exit the team</string>
     <string name="amount_orderd">Amount Ordered</string>
     <string name="whatsapp">WHATSAPP</string>
+    <string name="join_team">Join Team</string>
+    <string name="completedd">Completed</string>
 
 </resources>

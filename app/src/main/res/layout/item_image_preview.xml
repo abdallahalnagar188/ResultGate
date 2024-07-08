@@ -14,7 +14,7 @@
         android:layout_margin="@dimen/_2sdp"
         android:background="@color/white"
         android:contentDescription="@null"
-        android:src="@drawable/pic_logo"
+        android:src="@drawable/resultgatelogo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
