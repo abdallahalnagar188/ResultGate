@@ -423,5 +423,13 @@
     <string name="whatsapp">واتساب</string>
     <string name="join_team">انضم</string>
     <string name="completedd">مكتمل</string>
-
+    <string name="per_gram">لكل جرام</string>
+    <string name="become_a_vendor">Become A Vendor</string>
+    <string name="please_fill_all_fields_correctly">Please fill all fields correctly</string>
+    <string-array name="type_array">
+        <item>"type"</item>
+        <item>"suppliers"</item>
+        <item>"researchers"</item>
+        <item>"vendor"</item>
+    </string-array>
 </resources>

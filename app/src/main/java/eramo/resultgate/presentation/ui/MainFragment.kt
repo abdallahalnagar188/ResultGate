@@ -270,6 +270,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             navHeaderIvBack.setOnClickListener {
                 binding.mainDrawerLayout.closeDrawer(GravityCompat.START)
             }
+            navHeaderTvBecomeAVendor.setOnClickListener(){
+                if (UserUtil.isUserLogin()) mainNavController.navigate(R.id.becomeAVendorFragment,null, navOptionsAnimation())
+                else mainNavController.navigate(R.id.loginDialog,null, navOptionsAnimation())
+            }
         }
     }
 
@@ -330,6 +334,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 R.id.checkoutStepTwoFragment,
                 R.id.checkoutStepThreeFragment,
                 R.id.checkoutStepOneFragment,
+                R.id.becomeAVendorFragment,
                 -> {
                     binding.apply {
                         mainBottomAppBar.visibility = View.GONE

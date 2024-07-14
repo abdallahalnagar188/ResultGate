@@ -182,7 +182,6 @@ class SignUpFragment : Fragment(R.layout.fragment_signup), View.OnClickListener 
                             signupEtFirstName.text.toString().trim(),
                             signupEtLastName.text.toString().trim(),
                             signupEtEmail.text.toString().trim(),
-
                             signupEtPassword.text.toString().trim(),
                             signupEtRePassword.text.toString().trim(),
                             signupEtPhone.text.toString().trim(),

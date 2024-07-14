@@ -104,7 +104,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="normal"
-                android:text="@string/per_package"
+                android:text="@string/per_gram"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/tv_price"
                 app:layout_constraintBottom_toBottomOf="@id/tv_price"

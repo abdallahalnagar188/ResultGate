@@ -110,4 +110,9 @@ object AppModule {
     fun provideTeamsRepository(eramoApi: EramoApi): TeamsRepository {
         return TeamsRepositoryImpl(eramoApi)
     }
+    @Provides
+    @Singleton
+    fun becomeAVendorRepository(eramoApi: EramoApi): BecomeAVednorRepository {
+        return BecomeAVendorRepositoryImpl(eramoApi)
+    }
 }

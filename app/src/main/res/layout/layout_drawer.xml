@@ -244,6 +244,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/navHeader_iv_profile"
             app:layout_constraintTop_toBottomOf="@+id/navHeader_tv_myAccount" />
+        <TextView
+            android:id="@+id/navHeader_tv_become_a_vendor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:fontFamily="@font/ibmplexsansregular"
+            android:gravity="center_vertical"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="@string/become_a_vendor"
+            android:textColor="@color/black_low"
+            android:textSize="@dimen/_14ssp"
+            app:drawableStartCompat="@drawable/ic_become_vendor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/navHeader_iv_profile"
+            app:layout_constraintTop_toBottomOf="@+id/navHeader_tv_teams" />
 
         <TextView
             android:id="@+id/navHeader_tv_all_categories"
@@ -260,7 +276,7 @@
             app:drawableStartCompat="@drawable/ic_all_categories"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/navHeader_iv_profile"
-            app:layout_constraintTop_toBottomOf="@+id/navHeader_tv_teams" />
+            app:layout_constraintTop_toBottomOf="@+id/navHeader_tv_become_a_vendor" />
 
         <TextView
             android:id="@+id/navHeader_tv_myFavourite"

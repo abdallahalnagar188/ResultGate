@@ -6,6 +6,7 @@ import eramo.resultgate.data.remote.dto.SendQueryResponse
 import eramo.resultgate.data.remote.dto.UpdateFcmTokenResponse
 import eramo.resultgate.data.remote.dto.auth.*
 import eramo.resultgate.data.remote.dto.auth.forget.GiveMeEmailResponse
+import eramo.resultgate.data.remote.dto.becomeavendor.BecomeAVendorResponse
 import eramo.resultgate.data.remote.dto.cart.AddToCartResponse
 import eramo.resultgate.data.remote.dto.cart.CheckProductStockResponse
 import eramo.resultgate.data.remote.dto.cart.CheckPromoCodeResponse
@@ -565,6 +566,18 @@ interface EramoApi {
     suspend fun getMyTeams(
         @Header("Authorization") userToken: String?,
     ): Response<MyTeamResponse>
+
+    @FormUrlEncoded
+    @POST("become/vendor")
+    suspend fun becomeAVendor(
+        @Header("Authorization") userToken: String?,
+        @Field("name") name: String,
+        @Field("email") email: String,
+        @Field("phone") phone: String,
+        @Field("comment") comment: String?,
+        @Field("sign_from") signFrom: String = "android",
+        @Field("vendor_type") vendorType: String,
+    ): Response<BecomeAVendorResponse>
 
     @FormUrlEncoded
     @POST("home-page-search")

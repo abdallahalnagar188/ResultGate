@@ -441,5 +441,14 @@
     <string name="whatsapp">WHATSAPP</string>
     <string name="join_team">Join Team</string>
     <string name="completedd">Completed</string>
+    <string name="per_gram">per gram</string>
+    <string name="become_a_vendor">Become A Vendor</string>
+    <string name="please_fill_all_fields_correctly">Please fill all fields correctly</string>
 
+    <string-array name="type_array">
+        <item>"type"</item>
+        <item>"suppliers"</item>
+        <item>"researchers"</item>
+        <item>"vendor"</item>
+    </string-array>
 </resources>

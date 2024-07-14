@@ -18,7 +18,6 @@ class PagingAllTeams (
                 ?: state.closestPageToPosition(anchorPosition)?.nextKey?.minus(1)
         }
     }
-
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, TeamsModel> {
         val page = params.key ?: Constants.PAGING_START_INDEX
         return try {
