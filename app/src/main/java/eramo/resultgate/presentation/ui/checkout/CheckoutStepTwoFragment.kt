@@ -28,11 +28,11 @@ import eramo.resultgate.util.formatPrice
 import eramo.resultgate.util.navOptionsAnimation
 import eramo.resultgate.util.showToast
 import eramo.resultgate.util.state.UiState
-import io.kashier.sdk.Core.model.Response.Error.ErrorData
-import io.kashier.sdk.Core.model.Response.Payment.PaymentResponse
-import io.kashier.sdk.Core.model.Response.UserCallback
-import io.kashier.sdk.Core.network.SDK_MODE
-import io.kashier.sdk.Kashier
+//import io.kashier.sdk.Core.model.Response.Error.ErrorData
+//import io.kashier.sdk.Core.model.Response.Payment.PaymentResponse
+//import io.kashier.sdk.Core.model.Response.UserCallback
+//import io.kashier.sdk.Core.network.SDK_MODE
+//import io.kashier.sdk.Kashier
 import org.json.JSONObject
 import javax.inject.Inject
 
@@ -278,37 +278,37 @@ class CheckoutStepTwoFragment : Fragment(R.layout.fragment_checkout_step_two),
         }
     }
 
-    private fun setupKasheirPayment() {
-        val currency = "EGP"
-        val apiKeyId = "7092f232-6223-4307-8909-a983eb61e18e"
-        val merchantId = "MID-1762-315"
-        Kashier.init(requireActivity(), merchantId, apiKeyId, currency, SDK_MODE.DEVELOPMENT)
-
-        Kashier.startPaymentActivity(
-            requireActivity() as AppCompatActivity,
-            "12345",
-            "123",
-            total.toString(),
-            object : UserCallback<PaymentResponse> {
-                override fun onResponse(response: retrofit2.Response<PaymentResponse>?) {
-                    response?.let {
-                        if (it.isSuccessful) {
-                            Log.d(TAG, "success")
-                            findNavController().navigate(
-                                R.id.checkoutStepThreeFragment,
-                                null,
-                                navOptionsAnimation()
-                            )
-                        } else Log.d(TAG, "failed")
-                    }
-                }
-
-                override fun onFailure(error: ErrorData<PaymentResponse>?) {
-                    Log.d(TAG, error?.errorMessage ?: "failure")
-                }
-            }
-        )
-    }
+//    private fun setupKasheirPayment() {
+//        val currency = "EGP"
+//        val apiKeyId = "7092f232-6223-4307-8909-a983eb61e18e"
+//        val merchantId = "MID-1762-315"
+//        Kashier.init(requireActivity(), merchantId, apiKeyId, currency, SDK_MODE.DEVELOPMENT)
+//
+//        Kashier.startPaymentActivity(
+//            requireActivity() as AppCompatActivity,
+//            "12345",
+//            "123",
+//            total.toString(),
+//            object : UserCallback<PaymentResponse> {
+//                override fun onResponse(response: retrofit2.Response<PaymentResponse>?) {
+//                    response?.let {
+//                        if (it.isSuccessful) {
+//                            Log.d(TAG, "success")
+//                            findNavController().navigate(
+//                                R.id.checkoutStepThreeFragment,
+//                                null,
+//                                navOptionsAnimation()
+//                            )
+//                        } else Log.d(TAG, "failed")
+//                    }
+//                }
+//
+//                override fun onFailure(error: ErrorData<PaymentResponse>?) {
+//                    Log.d(TAG, error?.errorMessage ?: "failure")
+//                }
+//            }
+//        )
+//    }
 
     override fun onPaymentClick(model: PaymentTypesModel) {
 
