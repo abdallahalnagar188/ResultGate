@@ -89,18 +89,13 @@ class CheckoutStepTwoFragment : Fragment(R.layout.fragment_checkout_step_two),
                     getString(R.string.symbl) -> {
                         viewModelShared.paymentType = "Symbl"
                         if (total >= 300f) {
-                            findNavController().navigate(R.id.creditPaymentFragment, CreditPaymentFragmentArgs(total,"Symbl").toBundle())
+                            findNavController().navigate(R.id.creditPaymentFragment, CreditPaymentFragmentArgs(total, "Symbl").toBundle())
 //                            checkout(Constants.PAYMENT_SYMBL)
                         } else {
                             showToast("Must be more than 300")
                         }
                     }
-                    getString(R.string.online_payment) -> {
-                        viewModelShared.paymentType = "Online Payment"
-                        findNavController().navigate(R.id.creditPaymentFragment, CreditPaymentFragmentArgs(total,"Online Payment").toBundle())
-//                        checkout(Constants.PAYMENT_ONLINE)
 
-                    }
                 }
             }
         }
@@ -149,6 +144,7 @@ class CheckoutStepTwoFragment : Fragment(R.layout.fragment_checkout_step_two),
 
     private fun setupPaymentTypesRV() {
         val list = mutableListOf<PaymentTypesModel>()
+
 
         list.add(
             PaymentTypesModel("", getString(R.string.cash_on_delivery), "", "", "")
