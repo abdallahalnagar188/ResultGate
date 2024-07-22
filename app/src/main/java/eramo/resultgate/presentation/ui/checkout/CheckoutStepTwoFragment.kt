@@ -95,7 +95,6 @@ class CheckoutStepTwoFragment : Fragment(R.layout.fragment_checkout_step_two),
                             showToast("Must be more than 300")
                         }
                     }
-
                 }
             }
         }
