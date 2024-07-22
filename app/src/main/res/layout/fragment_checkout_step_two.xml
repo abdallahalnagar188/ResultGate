@@ -106,12 +106,11 @@
             android:layout_marginHorizontal="@dimen/_8sdp"
             android:layout_marginVertical="@dimen/_4sdp"
             android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@+id/view7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView8"
-            app:spanCount="2"
             tools:listitem="@layout/item_payment" />
 
         <View

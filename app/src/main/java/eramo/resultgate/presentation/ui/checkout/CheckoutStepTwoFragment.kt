@@ -151,10 +151,6 @@ class CheckoutStepTwoFragment : Fragment(R.layout.fragment_checkout_step_two),
         val list = mutableListOf<PaymentTypesModel>()
 
         list.add(
-            PaymentTypesModel("", getString(R.string.online_payment), "", "", "")
-        )
-
-        list.add(
             PaymentTypesModel("", getString(R.string.cash_on_delivery), "", "", "")
         )
 //        list.add(
@@ -312,9 +308,6 @@ class CheckoutStepTwoFragment : Fragment(R.layout.fragment_checkout_step_two),
 
     override fun onPaymentClick(model: PaymentTypesModel) {
 
-        if (model.title == getString(R.string.online_payment)) {
-            currentPaymentType = model.title
-        }
         if (model.title == getString(R.string.cash_on_delivery)) {
             currentPaymentType = model.title
         }
