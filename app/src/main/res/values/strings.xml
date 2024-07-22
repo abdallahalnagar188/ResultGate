@@ -64,7 +64,7 @@
     <string name="categories">CATEGORIES</string>
     <string name="bn_categories">Categories</string>
     <string name="brands">BRANDS</string>
-    <string name="stores">vendors</string>
+    <string name="stores">STORES</string>
     <string name="stores_bn">Stores</string>
     <string name="brands_drawer">Brands</string>
     <string name="browse_all_categories">Browse All Categories</string>
