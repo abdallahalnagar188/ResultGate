@@ -94,8 +94,11 @@ class HomeFragment : Fragment(R.layout.fragment_home),
     HomeBrandsAdapter.OnItemClickListener,
     PagerSliderAdapter.OnItemClickListener,
     MostSaleAdapter.OnItemClickListener,
-    MostViewedAdapter.OnItemClickListener, RvSecOneAdapter.OnItemClickListener, RvSecTwoAdapter.OnItemClickListener,
-    RvSecThreeAdapter.OnItemClickListener, RvSecFourAdapter.OnItemClickListener {
+    MostViewedAdapter.OnItemClickListener,
+    RvSecOneAdapter.OnItemClickListener,
+    RvSecTwoAdapter.OnItemClickListener,
+    RvSecThreeAdapter.OnItemClickListener,
+    RvSecFourAdapter.OnItemClickListener {
 
     @Inject
     lateinit var productAdapter: ProductAdapter

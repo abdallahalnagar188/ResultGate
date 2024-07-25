@@ -1,11 +1,14 @@
 package eramo.resultgate.presentation.ui.checkout
 
+//import io.kashier.sdk.Core.model.Response.Error.ErrorData
+//import io.kashier.sdk.Core.model.Response.Payment.PaymentResponse
+//import io.kashier.sdk.Core.model.Response.UserCallback
+//import io.kashier.sdk.Core.network.SDK_MODE
+//import io.kashier.sdk.Kashier
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -21,18 +24,12 @@ import eramo.resultgate.presentation.ui.dialog.LoadingDialog
 import eramo.resultgate.presentation.viewmodel.SharedViewModel
 import eramo.resultgate.presentation.viewmodel.checkout.CheckoutStepThreeViewModel
 import eramo.resultgate.util.Constants
-import eramo.resultgate.util.Constants.TAG
 import eramo.resultgate.util.LocalHelperUtil
 import eramo.resultgate.util.UserUtil
 import eramo.resultgate.util.formatPrice
 import eramo.resultgate.util.navOptionsAnimation
 import eramo.resultgate.util.showToast
 import eramo.resultgate.util.state.UiState
-//import io.kashier.sdk.Core.model.Response.Error.ErrorData
-//import io.kashier.sdk.Core.model.Response.Payment.PaymentResponse
-//import io.kashier.sdk.Core.model.Response.UserCallback
-//import io.kashier.sdk.Core.network.SDK_MODE
-//import io.kashier.sdk.Kashier
 import org.json.JSONObject
 import javax.inject.Inject
 

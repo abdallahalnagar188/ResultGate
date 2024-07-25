@@ -375,6 +375,7 @@
             android:textColor="@color/black_low"
             android:textSize="@dimen/_14ssp"
             android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
             app:drawableStartCompat="@drawable/ic_faq"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/navHeader_iv_profile"

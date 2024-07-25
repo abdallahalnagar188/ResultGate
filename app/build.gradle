@@ -21,7 +21,7 @@ android {
         applicationId "eramo.resultgate"
         minSdk 21
         targetSdk 34
-        versionCode 39
+        versionCode 40
         versionName "1.6.5"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
