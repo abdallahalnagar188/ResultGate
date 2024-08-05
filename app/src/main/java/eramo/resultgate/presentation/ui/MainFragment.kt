@@ -218,7 +218,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
             navHeaderTvTeams.setOnClickListener(){
                 if (UserUtil.isUserLogin()) bottomNavController.navigate(R.id.teamsFragment)
-                else return@setOnClickListener
+                else bottomNavController.navigate(R.id.loginDialog)
 
                 binding.mainDrawerLayout.closeDrawer(GravityCompat.START)
             }
@@ -271,8 +271,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 binding.mainDrawerLayout.closeDrawer(GravityCompat.START)
             }
             navHeaderTvBecomeAVendor.setOnClickListener(){
-                if (UserUtil.isUserLogin()) mainNavController.navigate(R.id.becomeAVendorFragment,null, navOptionsAnimation())
-                else mainNavController.navigate(R.id.loginDialog,null, navOptionsAnimation())
+                if (UserUtil.isUserLogin()) bottomNavController.navigate(R.id.becomeAVendorFragment,null, navOptionsAnimation())
+                else bottomNavController.navigate(R.id.loginDialog,null, navOptionsAnimation())
+                binding.mainDrawerLayout.closeDrawer(GravityCompat.START)
             }
         }
     }

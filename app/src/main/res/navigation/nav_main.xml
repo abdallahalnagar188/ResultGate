@@ -93,9 +93,5 @@
         android:id="@+id/deletedAccountDialogFragment"
         android:name="eramo.resultgate.presentation.ui.dialog.DeletedAccountDialogFragment"
         android:label="DeletedAccountDialogFragment" />
-    <fragment
-        android:id="@+id/becomeAVendorFragment"
-        android:name="eramo.resultgate.presentation.ui.drawer.becomeavendor.BecomeAVendorFragment"
-        android:label="fragment_become_a_vendor"
-        tools:layout="@layout/fragment_become_a_vendor" />
+
 </navigation>

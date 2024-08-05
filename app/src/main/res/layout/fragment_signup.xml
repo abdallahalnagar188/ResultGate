@@ -351,6 +351,130 @@
                 android:textCursorDrawable="@null" />
         </com.google.android.material.textfield.TextInputLayout>
 
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/itl_job"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/ibmplexsansregular"
+            android:textColorHint="@color/gray"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/itl_address">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signup_et_job"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/stroke_blue_radius"
+                android:drawableStart="@drawable/ic_location"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:hint="@string/yourjob"
+                android:importantForAutofill="no"
+                android:inputType="text|textNoSuggestions"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/itl_job_location"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/ibmplexsansregular"
+            android:textColorHint="@color/gray"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/itl_job">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signup_et_job_location"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/stroke_blue_radius"
+                android:drawableStart="@drawable/ic_location"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:hint="@string/yourjob"
+                android:importantForAutofill="no"
+                android:inputType="text|textNoSuggestions"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/itl_acadimy"
+        style="@style/TextInputLayoutStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/ibmplexsansregular"
+        android:textColorHint="@color/gray"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/itl_job_location">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signup_et_acadimy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/stroke_blue_radius"
+            android:drawableStart="@drawable/ic_location"
+            android:drawablePadding="@dimen/_8sdp"
+            android:fontFamily="@font/ibmplexsansregular"
+            android:hint="@string/yourjob"
+            android:importantForAutofill="no"
+            android:inputType="text|textNoSuggestions"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@null" />
+    </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/itl_research"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/ibmplexsansregular"
+            android:textColorHint="@color/gray"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/itl_acadimy">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signup_et_research"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/stroke_blue_radius"
+                android:drawableStart="@drawable/ic_location"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/ibmplexsansregular"
+                android:hint="@string/yourjob"
+                android:importantForAutofill="no"
+                android:inputType="text|textNoSuggestions"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <include
+            android:id="@+id/signup_in_type"
+            layout="@layout/layout_custom_spinner"
+            android:layout_width="0dp"
+            android:layout_marginVertical="@dimen/_8sdp"
+            app:layout_constraintStart_toStartOf="@id/itl_research"
+            app:layout_constraintEnd_toEndOf="@id/itl_research"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/itl_research"
+            android:layout_weight="1" />
+
         <!--        <LinearLayout-->
         <!--            android:id="@+id/linearLayout7"-->
         <!--            android:layout_width="0dp"-->
@@ -386,7 +510,7 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="@id/guideline"
             app:layout_constraintStart_toStartOf="@id/guideline2"
-            app:layout_constraintTop_toBottomOf="@id/itl_address">
+            app:layout_constraintTop_toBottomOf="@id/signup_in_type">
 
             <RadioButton
                 android:id="@+id/rbMale"

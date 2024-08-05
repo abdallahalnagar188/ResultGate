@@ -426,6 +426,7 @@
     <string name="per_gram">لكل جرام</string>
     <string name="become_a_vendor"> كن  بائع</string>
     <string name="please_fill_all_fields_correctly">ارجوك املاء كل الخانات بطريقه صحيحه</string>
+    <string name="yourjob">وظيفة</string>
     <string-array name="type_array">
         <item>"type"</item>
         <item>"suppliers"</item>
