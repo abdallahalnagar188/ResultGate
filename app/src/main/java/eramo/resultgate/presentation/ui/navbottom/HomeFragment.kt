@@ -698,7 +698,7 @@ class HomeFragment : Fragment(R.layout.fragment_home),
                         if (!binding.root.isRefreshing) LoadingDialog.showDialog()
                     }
 
-                    is UiState.Empty->{
+                    is UiState.Empty -> {
                         binding.apply {
                             view2.visibility = View.GONE
                             FHomeTvDays.visibility = View.GONE
@@ -1684,27 +1684,29 @@ class HomeFragment : Fragment(R.layout.fragment_home),
     }
 
     override fun onProductFavouriteClick(model: MyProductModel, isFav: Boolean) {
-        if (!UserUtil.isUserLogin()) {
-            viewModel.addRemoveItemWishlistDB(
-                MyFavouriteEntity(
-                    productId = model.id,
-                    productName = model.title,
-                    categoryName = model.category?.title,
-                    imageUrl = model.primaryImageUrl,
-                    modelNumber = "",
-                    price = model.realPrice!!.toFloat(),
-                    fakePrice = model.fakePrice!!.toFloat(),
-                    isNew = model.new,
-                    profitPercent = model.profitPercent
-                )
-            )
-        } else {
+        if (UserUtil.isUserLogin()) {
             isFavPressedProduct = true
             if (isFav) {
                 viewModel.addRemoveItemWishlist(model.id.toString(), "latest products")
             } else {
                 viewModel.addRemoveItemWishlist(model.id.toString(), "latest products")
             }
+//            viewModel.addRemoveItemWishlistDB(
+//                MyFavouriteEntity(
+//                    productId = model.id,
+//                    productName = model.title,
+//                    categoryName = model.category?.title,
+//                    imageUrl = model.primaryImageUrl,
+//                    modelNumber = "",
+//                    price = model.realPrice!!.toFloat(),
+//                    fakePrice = model.fakePrice!!.toFloat(),
+//                    isNew = model.new,
+//                    profitPercent = model.profitPercent
+//                )
+//            )
+        } else {
+            findNavController().navigate(R.id.loginDialog)
+
         }
     }
 
@@ -1717,27 +1719,29 @@ class HomeFragment : Fragment(R.layout.fragment_home),
     }
 
     override fun onDealFavouriteClick(model: MyProductModel, isFav: Boolean) {
-        if (!UserUtil.isUserLogin()) {
-            viewModel.addRemoveItemWishlistDB(
-                MyFavouriteEntity(
-                    productId = model.id,
-                    productName = model.title,
-                    categoryName = model.category?.title,
-                    imageUrl = model.primaryImageUrl,
-                    modelNumber = "",
-                    price = model.realPrice!!.toFloat(),
-                    fakePrice = model.fakePrice!!.toFloat(),
-                    isNew = model.new,
-                    profitPercent = model.profitPercent
-                )
-            )
-        } else {
+        if (UserUtil.isUserLogin()) {
             isFavPressedDeal = true
             if (isFav) {
                 viewModel.addRemoveItemWishlist(model.id.toString(), "latest deals")
             } else {
                 viewModel.addRemoveItemWishlist(model.id.toString(), "latest deals")
             }
+//            viewModel.addRemoveItemWishlistDB(
+//                MyFavouriteEntity(
+//                    productId = model.id,
+//                    productName = model.title,
+//                    categoryName = model.category?.title,
+//                    imageUrl = model.primaryImageUrl,
+//                    modelNumber = "",
+//                    price = model.realPrice!!.toFloat(),
+//                    fakePrice = model.fakePrice!!.toFloat(),
+//                    isNew = model.new,
+//                    profitPercent = model.profitPercent
+//                )
+//            )
+        } else {
+            findNavController().navigate(R.id.loginDialog)
+
         }
     }
 
@@ -1768,7 +1772,9 @@ class HomeFragment : Fragment(R.layout.fragment_home),
     }
 
     override fun onFeaturedFavouriteClick(model: MyProductModel, isFav: Boolean) {
-        if (!UserUtil.isUserLogin()) {
+        if (UserUtil.isUserLogin()) {
+            isFavPressedFeatured = true
+            viewModel.addRemoveItemWishlist(model.id.toString(), "featured products")
             viewModel.addRemoveItemWishlistDB(
                 MyFavouriteEntity(
                     productId = model.id,
@@ -1783,8 +1789,8 @@ class HomeFragment : Fragment(R.layout.fragment_home),
                 )
             )
         } else {
-            isFavPressedFeatured = true
-            viewModel.addRemoveItemWishlist(model.id.toString(), "featured products")
+            findNavController().navigate(R.id.loginDialog)
+
         }
     }
 
@@ -1818,7 +1824,9 @@ class HomeFragment : Fragment(R.layout.fragment_home),
     }
 
     override fun onMostViewedProductFavouriteClick(model: MyProductModel, isFav: Boolean) {
-        if (!UserUtil.isUserLogin()) {
+        if (UserUtil.isUserLogin()) {
+            isFavPressedFeatured = true
+            viewModel.addRemoveItemWishlist(model.id.toString(), "most viewed products")
             viewModel.addRemoveItemWishlistDB(
                 MyFavouriteEntity(
                     productId = model.id,
@@ -1833,8 +1841,8 @@ class HomeFragment : Fragment(R.layout.fragment_home),
                 )
             )
         } else {
-            isFavPressedFeatured = true
-            viewModel.addRemoveItemWishlist(model.id.toString(), "most viewed products")
+            findNavController().navigate(R.id.loginDialog)
+
         }
     }
 
@@ -1847,7 +1855,9 @@ class HomeFragment : Fragment(R.layout.fragment_home),
     }
 
     override fun onMostSaleProductFavouriteClick(model: MyProductModel, isFav: Boolean) {
-        if (!UserUtil.isUserLogin()) {
+        if (UserUtil.isUserLogin()) {
+            isFavPressedFeatured = true
+            viewModel.addRemoveItemWishlist(model.id.toString(), "most sale products")
             viewModel.addRemoveItemWishlistDB(
                 MyFavouriteEntity(
                     productId = model.id,
@@ -1862,8 +1872,8 @@ class HomeFragment : Fragment(R.layout.fragment_home),
                 )
             )
         } else {
-            isFavPressedFeatured = true
-            viewModel.addRemoveItemWishlist(model.id.toString(), "most sale products")
+            findNavController().navigate(R.id.loginDialog)
+
         }
     }
 
@@ -1876,7 +1886,7 @@ class HomeFragment : Fragment(R.layout.fragment_home),
     }
 
     override fun onSecOneProductFavouriteClick(model: MyProductModel, isFav: Boolean) {
-        if (!UserUtil.isUserLogin()) {
+        if (UserUtil.isUserLogin()) {
             viewModel.addRemoveItemWishlistDB(
                 MyFavouriteEntity(
                     productId = model.id,
@@ -1890,9 +1900,11 @@ class HomeFragment : Fragment(R.layout.fragment_home),
                     profitPercent = model.profitPercent
                 )
             )
-        } else {
             isFavPressedFeatured = true
             viewModel.addRemoveItemWishlist(model.id.toString(), "most sale products")
+        } else {
+            findNavController().navigate(R.id.loginDialog)
+
         }
     }
 
@@ -1905,7 +1917,7 @@ class HomeFragment : Fragment(R.layout.fragment_home),
     }
 
     override fun onSecFourProductFavouriteClick(model: MyProductModel, isFav: Boolean) {
-        if (!UserUtil.isUserLogin()) {
+        if (UserUtil.isUserLogin()) {
             viewModel.addRemoveItemWishlistDB(
                 MyFavouriteEntity(
                     productId = model.id,
@@ -1919,9 +1931,10 @@ class HomeFragment : Fragment(R.layout.fragment_home),
                     profitPercent = model.profitPercent
                 )
             )
-        } else {
             isFavPressedFeatured = true
             viewModel.addRemoveItemWishlist(model.id.toString(), "most sale products")
+        } else {
+            findNavController().navigate(R.id.loginDialog)
         }
     }
 
@@ -1934,7 +1947,7 @@ class HomeFragment : Fragment(R.layout.fragment_home),
     }
 
     override fun onSecThreeProductFavouriteClick(model: MyProductModel, isFav: Boolean) {
-        if (!UserUtil.isUserLogin()) {
+        if (UserUtil.isUserLogin()) {
             viewModel.addRemoveItemWishlistDB(
                 MyFavouriteEntity(
                     productId = model.id,
@@ -1948,9 +1961,11 @@ class HomeFragment : Fragment(R.layout.fragment_home),
                     profitPercent = model.profitPercent
                 )
             )
-        } else {
             isFavPressedFeatured = true
             viewModel.addRemoveItemWishlist(model.id.toString(), "most sale products")
+        } else {
+            findNavController().navigate(R.id.loginDialog)
+
         }
     }
 
@@ -1963,7 +1978,7 @@ class HomeFragment : Fragment(R.layout.fragment_home),
     }
 
     override fun onSecTwoProductFavouriteClick(model: MyProductModel, isFav: Boolean) {
-        if (!UserUtil.isUserLogin()) {
+        if (UserUtil.isUserLogin()) {
             viewModel.addRemoveItemWishlistDB(
                 MyFavouriteEntity(
                     productId = model.id,
@@ -1977,9 +1992,10 @@ class HomeFragment : Fragment(R.layout.fragment_home),
                     profitPercent = model.profitPercent
                 )
             )
-        } else {
             isFavPressedFeatured = true
             viewModel.addRemoveItemWishlist(model.id.toString(), "most sale products")
+        } else {
+            findNavController().navigate(R.id.loginDialog)
         }
     }
 }

@@ -84,6 +84,13 @@ object AppModule {
 
     @Provides
     @Singleton
+    fun provideAllDevicesRepository(eramoApi: EramoApi): AllDevicesRepo {
+        return AllDevicesRepoImpl(eramoApi)
+    }
+
+
+    @Provides
+    @Singleton
     fun provideProductsRepository(eramoApi: EramoApi,db: EramoDB): ProductsRepository {
         return ProductsRepositoryImpl(eramoApi,db.dao)
     }

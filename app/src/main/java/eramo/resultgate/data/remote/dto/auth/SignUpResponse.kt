@@ -50,7 +50,17 @@ data class SignUpResponse(
             @SerializedName("city")
             val city: City?,
             @SerializedName("region")
-            val region: Region?
+            val region: Region?,
+            @SerializedName("job")
+            val job: String?,
+            @SerializedName("job_location")
+            val jopLocation: String?,
+            @SerializedName("research_interests")
+            val researchInterests: String?,
+            @SerializedName("become_vendor")
+            val vendorType: String?,
+            @SerializedName("academic_degree")
+            val academicDegree: String?,
         ) {
             data class Country(
                 @SerializedName("id")
@@ -94,7 +104,12 @@ data class SignUpResponse(
             data?.user?.city?.title ?: "",
             data?.user?.region?.id ?: -1,
             data?.user?.region?.title ?: "",
-            message ?: "Error"
+            message ?: "Error",
+            job = data?.user?.job?:"",
+            jobLocation = data?.user?.jopLocation?:"",
+            researchInterests = data?.user?.researchInterests?:"",
+            academicDegree = data?.user?.academicDegree?:"",
+            vendorType = data?.user?.vendorType?:""
         )
     }
 }

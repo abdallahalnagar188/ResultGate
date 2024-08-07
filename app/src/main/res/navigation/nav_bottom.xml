@@ -173,6 +173,19 @@
             android:defaultValue="@null"
             app:nullable="true" />
     </fragment>
+
+    <fragment
+        android:id="@+id/allDevicesFragment"
+        android:name="eramo.resultgate.presentation.ui.navbottom.extension.AllDevicesFragment"
+        android:label="AllDevicesFragment"
+        tools:layout="@layout/fragment_all_devices">
+
+        <argument
+            android:name="brandId"
+            app:argType="string"
+            android:defaultValue="@null"
+            app:nullable="true" />
+    </fragment>
     <fragment
         android:id="@+id/filterFragment"
         android:name="eramo.resultgate.presentation.ui.navbottom.extension.FilterFragment"

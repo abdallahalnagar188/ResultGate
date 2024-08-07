@@ -108,7 +108,13 @@ class AuthRepositoryImpl(private val eramoApi: EramoApi) : AuthRepository {
         cityId: RequestBody?,
         regionId: RequestBody?,
         subRegionId: RequestBody?,
-        image: MultipartBody.Part?
+        image: MultipartBody.Part?,
+        job:RequestBody?,
+        jobLocation:RequestBody?,
+        vendorType:RequestBody?,
+        academicDegree:RequestBody?,
+        researchInterests:RequestBody?
+
     ): Flow<Resource<SignUpModel>> {
         return flow {
             val result = toResultFlow {
@@ -128,7 +134,12 @@ class AuthRepositoryImpl(private val eramoApi: EramoApi) : AuthRepository {
                     cityId,
                     regionId,
                     subRegionId,
-                    image
+                    image,
+                    job,
+                    jobLocation,
+                    vendorType,
+                    academicDegree,
+                    researchInterests
                 )
             }
             result.collect {

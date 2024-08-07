@@ -110,10 +110,11 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details),
                     ).toBundle()
                 )
             }
-            whatsappBtn.setOnClickListener(){
+            whatsappBtn.setOnClickListener() {
                 try {
                     // WhatsApp URI with phone number and message
-                    val uri = Uri.parse("https://api.whatsapp.com/send?phone=" + productModel.data?.get(0)?.vendorPhone + "&text=" + Uri.encode("Hi, I'm interested in your product"))
+                    val uri =
+                        Uri.parse("https://api.whatsapp.com/send?phone=" + productModel.data?.get(0)?.vendorPhone + "&text=" + Uri.encode("Hi, I'm interested in your product"))
                     val intent = Intent(Intent.ACTION_VIEW, uri)
                     intent.setPackage("com.whatsapp")
                     startActivity(intent)
@@ -127,6 +128,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details),
             }
 
             FDProductIvFav.setOnClickListener {
+                if (UserUtil.isUserLogin()){
                 if (UserUtil.isUserLogin()) {
                     viewModel.addRemoveItemWishlist(productId)
                 } else {
@@ -142,6 +144,9 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details),
                         profitPercent = productModel.data?.get(0)?.profitPercent
                     )
                     viewModel.addRemoveItemWishlistDB(myFavouriteEntity)
+                }
+            }else{
+                findNavController().navigate(R.id.loginDialog)
                 }
             }
 
@@ -207,15 +212,15 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details),
                     vendorId = productModel.data?.get(0)?.vendorId,
                     vendorName = productModel.data?.get(0)?.vendorName,
 
-                )
+                    )
 
                 if (UserUtil.isUserLogin()) {
-                 if ((productModel.data?.get(0)?.cart_qty!!)+(qty) <= (productModel.data?.get(0)?.limitation)!!){
-                     viewModel.addToCart(cart,myCartDataEntity)
-                     viewModel.getProduct(productId)
-                 }else{
-                     showToast(getString(R.string.you_cant_buy_more_than_limit))
-                 }
+                    if ((productModel.data?.get(0)?.cart_qty!!) + (qty) <= (productModel.data?.get(0)?.limitation)!!) {
+                        viewModel.addToCart(cart, myCartDataEntity)
+                        viewModel.getProduct(productId)
+                    } else {
+                        showToast(getString(R.string.you_cant_buy_more_than_limit))
+                    }
 
                 } else {
                     if (cartProductsModel?.productList!!.isEmpty()) {
@@ -231,8 +236,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details),
                         } else {
                             showToast(getString(R.string.you_cant_buy_more_than_limit))
                         }
-                    }
-                    else {
+                    } else {
                         for (item in cartProductsModel?.productList!!) {
                             if (item?.id == productModel.data?.get(0)?.id) {
                                 if ((qty + item?.quantity!!) <= item.limitation!!) {
@@ -329,13 +333,13 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details),
                     vendorId = productModel.data?.get(0)?.vendorId,
                     vendorName = productModel.data?.get(0)?.vendorName,
 
-                )
+                    )
 
                 if (UserUtil.isUserLogin()) {
-                    if ((productModel.data?.get(0)?.cart_qty!!)+(qty) <= (productModel.data?.get(0)?.limitation)!!){
-                        viewModel.addToCart(cart,myCartDataEntity)
+                    if ((productModel.data?.get(0)?.cart_qty!!) + (qty) <= (productModel.data?.get(0)?.limitation)!!) {
+                        viewModel.addToCart(cart, myCartDataEntity)
                         viewModel.getProduct(productId)
-                    }else{
+                    } else {
                         showToast(getString(R.string.you_cant_buy_more_than_limit))
                     }
 
@@ -353,8 +357,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details),
                         } else {
                             showToast(getString(R.string.you_cant_buy_more_than_limit))
                         }
-                    }
-                    else {
+                    } else {
                         for (item in cartProductsModel?.productList!!) {
                             if (item?.id == productModel.data?.get(0)?.id) {
                                 if ((qty + item?.quantity!!) <= item.limitation!!) {
@@ -526,7 +529,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details),
     }
 
     private fun handleUI(productModel: ProductDetailsResponse) {
-        if (productModel.data?.get(0)?.productType == "product"){
+        if (productModel.data?.get(0)?.productType == "product") {
             binding.apply {
                 FDProductTvAddToCart.visibility = View.VISIBLE
                 FDProductBtnBuy.visibility = View.VISIBLE
@@ -535,7 +538,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details),
                 view3.visibility = View.VISIBLE
             }
 
-        }else if (productModel.data?.get(0)?.productType == "device"){
+        } else if (productModel.data?.get(0)?.productType == "device") {
             binding.apply {
                 FDProductTvAddToCart.visibility = View.INVISIBLE
                 FDProductBtnBuy.visibility = View.INVISIBLE
@@ -942,12 +945,14 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details),
                 .load(productModel.data?.get(0)?.primaryImageUrl)
                 .into(this.FDProductIvImage)
 
-            if (UserUtil.isUserLogin()) {
-                if (productModel.data?.get(0)?.isFav == 1) binding.FDProductIvFav.setImageResource(R.drawable.ic_heart_fill)
-                else binding.FDProductIvFav.setImageResource(R.drawable.ic_heart)
-            } else {
-                viewModel.getFavouriteListDB()
-            }
+                if (UserUtil.isUserLogin()) {
+                    if (productModel.data?.get(0)?.isFav == 1) binding.FDProductIvFav.setImageResource(R.drawable.ic_heart_fill)
+                    else binding.FDProductIvFav.setImageResource(R.drawable.ic_heart)
+                } else {
+                    viewModel.getFavouriteListDB()
+                }
+
+
 
         }
 
@@ -1348,7 +1353,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details),
                                         vendorId = productModel.data?.get(0)?.vendorId,
                                         vendorName = productModel.data?.get(0)?.vendorName,
 
-                                    )
+                                        )
                                     viewModel.addToCart(cartExtraThree, myCartDataEntity)
                                 }
                             }

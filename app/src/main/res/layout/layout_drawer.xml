@@ -256,7 +256,8 @@
             android:text="@string/become_a_vendor"
             android:textColor="@color/black_low"
             android:textSize="@dimen/_14ssp"
-            app:drawableStartCompat="@drawable/ic_become_vendor"
+            app:drawableStartCompat="@drawable/ic_dashbored"
+            android:drawableTint="@color/purple"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/navHeader_iv_profile"
             app:layout_constraintTop_toBottomOf="@+id/navHeader_tv_teams" />
@@ -270,7 +271,7 @@
             android:fontFamily="@font/ibmplexsansregular"
             android:gravity="center_vertical"
             android:paddingVertical="@dimen/_10sdp"
-            android:text="@string/bn_categories"
+            android:text="@string/categories_drawer"
             android:textColor="@color/black_low"
             android:textSize="@dimen/_14ssp"
             app:drawableStartCompat="@drawable/ic_all_categories"

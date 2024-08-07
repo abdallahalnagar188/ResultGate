@@ -1,5 +1,6 @@
 package eramo.resultgate.domain.validation
 
+import kotlinx.coroutines.Job
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -14,4 +15,5 @@ class Validation @Inject constructor(
     val validateNotMinusOne: ValidateNotMinusOne,
     val validatePassword: ValidatePassword,
     val validateRepeatPassword: ValidateRepeatPassword,
+
 )

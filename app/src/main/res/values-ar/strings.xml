@@ -58,7 +58,7 @@
     <string name="latest_products">اخر المنتجات</string>
     <string name="all_products">كل المنتجات</string>
     <string name="categories">تسوق حسب الاقسام</string>
-    <string name="bn_categories">الاقسام</string>
+    <string name="bn_categories">الاجهزه</string>
     <string name="brands">الماركات</string>
     <string name="stores">البائعون</string>
     <string name="stores_bn">المتاجر</string>
@@ -363,6 +363,8 @@
     <string name="reply">الرد:</string>
     <string name="this_account_has_a_deletion_request_if_you_need_help_about_your_account_your_are_welcome_for_contact_us">يحتوى هذا الحساب على طلب حذف إذا كنت بحاجة إلى مساعدة بشأن حسابك فنحن نرحب بك للأتصال بنا</string>
     <string name="details">التفاصيل</string>
+    <string name="your_account_created_successfly_please_wait_to_confirm_it">Your Account created successfully, please wait to confirm it.</string>
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     <string name="loading">جار التحميل..</string>
@@ -424,9 +426,17 @@
     <string name="join_team">انضم</string>
     <string name="completedd">مكتمل</string>
     <string name="per_gram">لكل جرام</string>
-    <string name="become_a_vendor"> كن  بائع</string>
+    <string name="become_a_vendor">لوحة التحكم</string>
     <string name="please_fill_all_fields_correctly">ارجوك املاء كل الخانات بطريقه صحيحه</string>
     <string name="yourjob">وظيفة</string>
+    <string name="job_location">مكان الوظيفه</string>
+    <string name="researsher_intersted">اهتمامات البحث</string>
+    <string name="acadmey">المؤهل العلمي</string>
+    <string name="vendor_type">researcher or suppliers or vendor</string>
+    <string name="researshers">researchers</string>
+    <string name="suppliers">suppliers</string>
+    <string name="vendor">vendor</string>
+
     <string-array name="type_array">
         <item>"type"</item>
         <item>"suppliers"</item>

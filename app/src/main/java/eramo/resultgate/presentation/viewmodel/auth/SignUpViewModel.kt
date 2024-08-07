@@ -84,7 +84,13 @@ class SignUpViewModel @Inject constructor(
         cityId: Int,
         regionId: Int,
         subRegionId: Int,
-        image: Uri?
+        image: Uri?,
+        job:String,
+        jobLocation:String,
+        vendorType:String,
+        academicDegree:String,
+        researchInterests:String
+
     ) {
         val storeFirstResult = validation.validateField(firstName)
         val storeLastResult = validation.validateField(lastName)
@@ -102,6 +108,11 @@ class SignUpViewModel @Inject constructor(
 
         val addressResult = validation.validateField(address)
         val genderResult = validation.validateField(gender)
+        val jobResult = validation.validateField(job)
+        val jobLocationResult = validation.validateField(jobLocation)
+        val vendorTypeResult = validation.validateField(vendorType)
+        val academicDegreeResult = validation.validateField(academicDegree)
+        val researchInterestsResult = validation.validateField(researchInterests)
 
         val hasError = listOf(
             storeFirstResult,
@@ -116,7 +127,12 @@ class SignUpViewModel @Inject constructor(
             regionResult,
             subRegionResult,
             addressResult,
-            genderResult
+            genderResult,
+            jobResult,
+            jobLocationResult,
+            vendorTypeResult,
+            academicDegreeResult,
+            researchInterestsResult
         ).any { !it.successful }
 
         if (hasError) {
@@ -137,7 +153,13 @@ class SignUpViewModel @Inject constructor(
                         subRegionIdError = subRegionResult.errorMessage,
 
                         addressError = addressResult.errorMessage,
-                        genderError = genderResult.errorMessage
+                        genderError = genderResult.errorMessage,
+                        jobError = jobResult.errorMessage,
+                        jobLocationError = jobLocationResult.errorMessage,
+                        vendorTypeError = vendorTypeResult.errorMessage,
+                        academicDegreeError = academicDegreeResult.errorMessage,
+                        researchInterestsError = researchInterestsResult.errorMessage
+
                     )
                 )
             }
@@ -174,7 +196,12 @@ class SignUpViewModel @Inject constructor(
             convertToRequestBody(cityId.toString()),
             convertToRequestBody(regionId.toString()),
             convertToRequestBody(subRegionId.toString()),
-            convertFileToMultipart(Constants.IMG_KEY_PROFILE, image)
+            convertFileToMultipart(Constants.IMG_KEY_PROFILE, image),
+            convertToRequestBody(job),
+            convertToRequestBody(jobLocation),
+            convertToRequestBody(vendorType),
+            convertToRequestBody(academicDegree),
+            convertToRequestBody(researchInterests)
         )
 
     }
@@ -195,7 +222,12 @@ class SignUpViewModel @Inject constructor(
         cityId: RequestBody?,
         regionId: RequestBody?,
         subRegionId: RequestBody?,
-        image: MultipartBody.Part?
+        image: MultipartBody.Part?,
+        job:RequestBody?,
+        jobLocation:RequestBody?,
+        vendorType:RequestBody?,
+        academicDegree:RequestBody?,
+        researchInterests:RequestBody?
     ) {
         registerJob?.cancel()
         registerJob = viewModelScope.launch {
@@ -216,7 +248,12 @@ class SignUpViewModel @Inject constructor(
                     cityId,
                     regionId,
                     subRegionId,
-                    image
+                    image,
+                    job,
+                    jobLocation,
+                    vendorType,
+                    academicDegree,
+                    researchInterests
                 ).collect {
                     when (it) {
                         is Resource.Success -> {
@@ -358,6 +395,13 @@ class SignUpViewModel @Inject constructor(
         val regionIdError: UiText? = null,
         val subRegionIdError: UiText? = null,
         val addressError: UiText? = null,
-        val genderError: UiText? = null
+        val genderError: UiText? = null,
+        val jobError: UiText? = null,
+        val jobLocationError: UiText? = null,
+        val vendorTypeError: UiText? = null,
+        val academicDegreeError: UiText? = null,
+        val researchInterestsError: UiText? = null,
+
+
     )
 }

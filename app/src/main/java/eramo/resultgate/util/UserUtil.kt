@@ -38,6 +38,11 @@ object UserUtil {
 
     private const val CountryName = "country_en_name"
     private const val CityName = "city_en_name"
+    private const val JOB = "job"
+    private const val JOB_LOCATION = "job_location"
+    private const val VENDOR_TYPE = "vendor_type"
+    private const val ACADEMIC_DEGREE = "academic_degree"
+    private const val RESEARCH_INTERESTS = "research_interests"
 
     private const val USER_PHONE = "user_phone"
     private const val USER_EMAIL = "user_email"
@@ -80,7 +85,12 @@ object UserUtil {
         regionTitle: String,
 
         address: String,
-        m_image: String
+        m_image: String,
+//        job: String,
+//        jobLocation: String,
+//        vendorType: String,
+//        academicDegree: String,
+//        researchInterests: String
     ) {
         sharedPreferences.edit().putBoolean(REMEMBER, isRemember).apply()
 
@@ -110,6 +120,11 @@ object UserUtil {
         sharedPreferences.edit().putString(REGION_TITLE, regionTitle).apply()
 
         sharedPreferences.edit().putString(USER_PROFILE_IMAGE, m_image).apply()
+//        sharedPreferences.edit().putString(JOB, job).apply()
+//        sharedPreferences.edit().putString(JOB_LOCATION, jobLocation).apply()
+//        sharedPreferences.edit().putString(VENDOR_TYPE, vendorType).apply()
+//        sharedPreferences.edit().putString(ACADEMIC_DEGREE, academicDegree).apply()
+//        sharedPreferences.edit().putString(RESEARCH_INTERESTS, researchInterests).apply()
     }
 
     fun saveUserProfile(m_image: String) {
@@ -127,8 +142,9 @@ object UserUtil {
     fun saveUserCityFiltrationTitleAr(cityTitleAr: String) {
         sharedPreferences.edit().putString(CITY_FILTRATION_TITLE_AR, cityTitleAr).apply()
     }
+
     fun saveBrandId(brandId: String) {
-        sharedPreferences.edit().putString(BRAND_ID,brandId).apply()
+        sharedPreferences.edit().putString(BRAND_ID, brandId).apply()
     }
 
     fun clearUserInfo() {
@@ -164,32 +180,38 @@ object UserUtil {
         sharedPreferences.edit().putString(CITY_FILTRATION_ID, "-1").apply()
         sharedPreferences.edit().putString(CITY_FILTRATION_TITLE_EN, "").apply()
         sharedPreferences.edit().putString(CITY_FILTRATION_TITLE_AR, "").apply()
+        sharedPreferences.edit().putString(JOB, "").apply()
+        sharedPreferences.edit().putString(JOB_LOCATION, "").apply()
+        sharedPreferences.edit().putString(VENDOR_TYPE, "").apply()
+        sharedPreferences.edit().putString(ACADEMIC_DEGREE, "").apply()
+        sharedPreferences.edit().putString(RESEARCH_INTERESTS, "").apply()
     }
 
     fun saveFirstTime() = sharedPreferences.edit().putBoolean(IS_FIRST_TIME, false).apply()
 
     fun isFirstTime() = sharedPreferences.getBoolean(IS_FIRST_TIME, true)
 
-    fun saveCurrency(currency:String){
+    fun saveCurrency(currency: String) {
         sharedPreferences.edit().putString(CURRENCY, currency).apply()
     }
 
-    fun getCurrency():String{
+    fun getCurrency(): String {
         return sharedPreferences.getString(CURRENCY, Constants.CURRENCY_EGP)!!
     }
-    fun getBrandId():String{
-        return sharedPreferences.getString(BRAND_ID,"4")!!
+
+    fun getBrandId(): String {
+        return sharedPreferences.getString(BRAND_ID, "4")!!
     }
 
-    fun getCityFiltrationId():String{
+    fun getCityFiltrationId(): String {
         return sharedPreferences.getString(CITY_FILTRATION_ID, "-1")!!
     }
 
-    fun getCityFiltrationTitleEn():String{
+    fun getCityFiltrationTitleEn(): String {
         return sharedPreferences.getString(CITY_FILTRATION_TITLE_EN, "")!!
     }
 
-    fun getCityFiltrationTitleAr():String{
+    fun getCityFiltrationTitleAr(): String {
         return sharedPreferences.getString(CITY_FILTRATION_TITLE_AR, "")!!
     }
 
@@ -231,5 +253,11 @@ object UserUtil {
     fun setHasDeepLink(hasDeepLink: Boolean) = sharedPreferences.edit().putBoolean(HAS_DEEP_LINK, hasDeepLink).apply()
 
     fun hasDeepLink() = sharedPreferences.getBoolean(HAS_DEEP_LINK, false)
+    fun getJob() = sharedPreferences.getString(JOB, "") ?: ""
+    fun getJobLocation() = sharedPreferences.getString(JOB_LOCATION, "") ?: ""
+
+    fun getVendorType() = sharedPreferences.getString(VENDOR_TYPE, "") ?: ""
+    fun getAcademicDegree() = sharedPreferences.getString(ACADEMIC_DEGREE, "") ?: ""
+    fun getResearchInterests() = sharedPreferences.getString(RESEARCH_INTERESTS, "") ?: ""
 
 }

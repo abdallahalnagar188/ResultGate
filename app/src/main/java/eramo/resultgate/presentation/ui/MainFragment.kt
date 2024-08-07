@@ -1,5 +1,7 @@
 package eramo.resultgate.presentation.ui
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -216,7 +218,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 binding.mainDrawerLayout.closeDrawer(GravityCompat.START)
             }
 
-            navHeaderTvTeams.setOnClickListener(){
+            navHeaderTvTeams.setOnClickListener() {
                 if (UserUtil.isUserLogin()) bottomNavController.navigate(R.id.teamsFragment)
                 else bottomNavController.navigate(R.id.loginDialog)
 
@@ -270,9 +272,13 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             navHeaderIvBack.setOnClickListener {
                 binding.mainDrawerLayout.closeDrawer(GravityCompat.START)
             }
-            navHeaderTvBecomeAVendor.setOnClickListener(){
-                if (UserUtil.isUserLogin()) bottomNavController.navigate(R.id.becomeAVendorFragment,null, navOptionsAnimation())
-                else bottomNavController.navigate(R.id.loginDialog,null, navOptionsAnimation())
+            navHeaderTvBecomeAVendor.setOnClickListener() {
+                if (UserUtil.isUserLogin()) {
+                    val dashboardUrl = "https://multivendor.eramostore.com/dashboard/acp/login"
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(dashboardUrl))
+                    startActivity(intent)
+                }
+                else bottomNavController.navigate(R.id.loginDialog, null, navOptionsAnimation())
                 binding.mainDrawerLayout.closeDrawer(GravityCompat.START)
             }
         }
@@ -284,8 +290,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             mainBn.setOnItemSelectedListener { item ->
                 when (item.itemId) {
 //                    R.id.shopFragment -> setCurrentDestination(R.id.shopFragment)
-                    R.id.allCategoryFragment -> setCurrentDestination(R.id.allCategoryFragment)
-                    R.id.allStoresFragment-> setCurrentDestination(R.id.allStoresFragment)
+                    R.id.allCategoryFragment -> setCurrentDestination(R.id.allDevicesFragment)
+                    R.id.allStoresFragment -> setCurrentDestination(R.id.allStoresFragment)
 
                     R.id.notificationFragment -> setCurrentDestination(R.id.notificationFragment)
                     R.id.cartFragment -> setCurrentDestination(R.id.cartFragment)

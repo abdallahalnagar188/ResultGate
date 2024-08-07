@@ -95,7 +95,7 @@ class LoginViewModel @Inject constructor(
             body.member?.region?.id.toString(),
             body.member?.region?.title.toString(),
             "",
-            body.member?.imageUrl ?: ""
+            body.member?.imageUrl ?: "",
         )
     }
 }

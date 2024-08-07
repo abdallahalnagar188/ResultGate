@@ -55,7 +55,13 @@ interface AuthRepository {
         cityId: RequestBody?,
         regionId: RequestBody?,
         subRegionId: RequestBody?,
-        image: MultipartBody.Part?
+        image: MultipartBody.Part?,
+        job:RequestBody?,
+        jobLocation:RequestBody?,
+        vendorType:RequestBody?,
+        academicDegree:RequestBody?,
+        researchInterests:RequestBody?
+
     ): Flow<Resource<SignUpModel>>
 
     suspend fun suspendAccount(): Flow<Resource<SuspendAccountResponse>>

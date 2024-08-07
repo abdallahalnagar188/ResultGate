@@ -22,6 +22,7 @@ import eramo.resultgate.presentation.ui.dialog.LoadingDialog
 import eramo.resultgate.presentation.viewmodel.auth.LoginViewModel
 import eramo.resultgate.util.Constants
 import eramo.resultgate.util.LocalHelperUtil
+import eramo.resultgate.util.UserUtil
 import eramo.resultgate.util.navOptionsAnimation
 import eramo.resultgate.util.onBackPressed
 import eramo.resultgate.util.showToast
@@ -84,6 +85,7 @@ class LoginFragment : Fragment(R.layout.fragment_login), View.OnClickListener {
             R.id.login_tv_forgot -> findNavController().navigate(R.id.forgetPasswordFragment)
 
             R.id.login_btn_login -> setupLogin()
+
 
 
             R.id.tv_home -> {

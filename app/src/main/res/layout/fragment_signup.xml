@@ -371,7 +371,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/stroke_blue_radius"
-                android:drawableStart="@drawable/ic_location"
+                android:drawableStart="@drawable/ic_job"
                 android:drawablePadding="@dimen/_8sdp"
                 android:fontFamily="@font/ibmplexsansregular"
                 android:hint="@string/yourjob"
@@ -399,17 +399,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/stroke_blue_radius"
-                android:drawableStart="@drawable/ic_location"
+                android:drawableStart="@drawable/icon_job_location"
                 android:drawablePadding="@dimen/_8sdp"
                 android:fontFamily="@font/ibmplexsansregular"
-                android:hint="@string/yourjob"
+                android:hint="@string/job_location"
                 android:importantForAutofill="no"
                 android:inputType="text|textNoSuggestions"
                 android:textColor="@color/black"
                 android:textCursorDrawable="@null" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/itl_acadimy"
+        android:id="@+id/itl_research"
         style="@style/TextInputLayoutStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -423,21 +423,21 @@
         app:layout_constraintTop_toBottomOf="@+id/itl_job_location">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/signup_et_acadimy"
+            android:id="@+id/signup_et_research"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/stroke_blue_radius"
-            android:drawableStart="@drawable/ic_location"
+            android:drawableStart="@drawable/ic_research"
             android:drawablePadding="@dimen/_8sdp"
             android:fontFamily="@font/ibmplexsansregular"
-            android:hint="@string/yourjob"
+            android:hint="@string/researsher_intersted"
             android:importantForAutofill="no"
             android:inputType="text|textNoSuggestions"
             android:textColor="@color/black"
             android:textCursorDrawable="@null" />
     </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/itl_research"
+            android:id="@+id/itl_acadimy"
             style="@style/TextInputLayoutStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -448,32 +448,122 @@
             app:hintEnabled="false"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/itl_acadimy">
+            app:layout_constraintTop_toBottomOf="@+id/itl_research">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/signup_et_research"
+                android:id="@+id/signup_et_acadimy"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/stroke_blue_radius"
-                android:drawableStart="@drawable/ic_location"
+                android:drawableStart="@drawable/ic_acadmy"
                 android:drawablePadding="@dimen/_8sdp"
                 android:fontFamily="@font/ibmplexsansregular"
-                android:hint="@string/yourjob"
+                android:hint="@string/acadmey"
                 android:importantForAutofill="no"
                 android:inputType="text|textNoSuggestions"
                 android:textColor="@color/black"
                 android:textCursorDrawable="@null" />
         </com.google.android.material.textfield.TextInputLayout>
-        <include
-            android:id="@+id/signup_in_type"
-            layout="@layout/layout_custom_spinner"
+
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/itl_vendor_type"-->
+<!--        style="@style/TextInputLayoutStyle"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="@dimen/_4sdp"-->
+<!--        android:layout_marginTop="@dimen/_8sdp"-->
+<!--        android:fontFamily="@font/ibmplexsansregular"-->
+<!--        android:textColorHint="@color/gray"-->
+<!--        app:hintEnabled="false"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guideline"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guideline2"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/itl_acadimy">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/signup_et_vendor_type"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@drawable/stroke_blue_radius"-->
+<!--            android:drawableStart="@drawable/ic_vendor_type"-->
+<!--            android:drawablePadding="@dimen/_8sdp"-->
+<!--            android:fontFamily="@font/ibmplexsansregular"-->
+<!--            android:hint="@string/vendor_type"-->
+<!--            android:importantForAutofill="no"-->
+<!--            android:inputType="text|textNoSuggestions"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textCursorDrawable="@null" />-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
             android:layout_width="0dp"
-            android:layout_marginVertical="@dimen/_8sdp"
-            app:layout_constraintStart_toStartOf="@id/itl_research"
-            app:layout_constraintEnd_toEndOf="@id/itl_research"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/itl_research"
-            android:layout_weight="1" />
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="@id/guideline2"
+            app:layout_constraintTop_toBottomOf="@id/itl_acadimy">
+
+            <RadioButton
+                android:id="@+id/rbResearcher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/eramo_color"
+                android:text="@string/researshers" />
+
+            <RadioButton
+                android:id="@+id/rbSuppliers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/eramo_color"
+                android:text="@string/suppliers" />
+            <RadioButton
+                android:id="@+id/rbVendor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/eramo_color"
+                android:text="@string/vendor" />
+
+        </RadioGroup>
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/itl_acadimy"-->
+<!--            app:layout_constraintStart_toStartOf="@id/itl_acadimy"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/itl_acadimy"-->
+<!--            android:id="@+id/vendor_type_spinner"-->
+<!--            android:layoutDirection="locale">-->
+
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/spinner_vendor"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/itl_acadimy"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_marginHorizontal="@dimen/_40sdp"-->
+<!--            android:layout_height="@dimen/_40sdp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/spinnerIcon"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ic_location" />-->
+
+<!--            <Spinner-->
+<!--                android:id="@+id/spinner"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="@dimen/_40sdp"-->
+<!--                android:layout_weight="1" />-->
+<!--        </LinearLayout>-->
+
+
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
 
         <!--        <LinearLayout-->
         <!--            android:id="@+id/linearLayout7"-->
@@ -510,7 +600,7 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="@id/guideline"
             app:layout_constraintStart_toStartOf="@id/guideline2"
-            app:layout_constraintTop_toBottomOf="@id/signup_in_type">
+            app:layout_constraintTop_toBottomOf="@id/radioGroup2">
 
             <RadioButton
                 android:id="@+id/rbMale"

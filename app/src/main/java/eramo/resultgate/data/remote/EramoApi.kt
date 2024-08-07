@@ -4,6 +4,7 @@ import eramo.resultgate.data.remote.dto.NotificationDetailsResponse
 import eramo.resultgate.data.remote.dto.NotificationResponse
 import eramo.resultgate.data.remote.dto.SendQueryResponse
 import eramo.resultgate.data.remote.dto.UpdateFcmTokenResponse
+import eramo.resultgate.data.remote.dto.alldevices.AllDevicesResponse
 import eramo.resultgate.data.remote.dto.auth.*
 import eramo.resultgate.data.remote.dto.auth.forget.GiveMeEmailResponse
 import eramo.resultgate.data.remote.dto.becomeavendor.BecomeAVendorResponse
@@ -99,10 +100,17 @@ interface EramoApi {
         @Part("city_id") cityId: RequestBody?,
         @Part("region_id") regionId: RequestBody?,
         @Part("subregion_id") subRegionId: RequestBody?,
-        @Part image: MultipartBody.Part?
+        @Part image: MultipartBody.Part?,
+
+        @Part("job") job: RequestBody?,
+        @Part("job_location") jobLocation: RequestBody?,
+        @Part("become_vendor") vendorType: RequestBody?,
+        @Part("academic_degree") academicDegree: RequestBody?,
+        @Part("research_interests") researchInterests: RequestBody?,
+
     ): Response<SignUpResponse>
 
-    //    @FormUrlEncoded
+    @FormUrlEncoded
     @POST("suspened-user")
     suspend fun suspendAccount(
         @Header("Authorization") userToken: String?,
@@ -167,6 +175,9 @@ interface EramoApi {
     //    @GET("countries-api")
     @GET("countries")
     suspend fun allCountries(): Response<AllCountriesResponse>
+
+    @GET("all-devices")
+    suspend fun allDevices(): AllDevicesResponse
 
     @GET("get-city/{country_id}")
     suspend fun allCities(@Path("country_id") countryId: String): Response<AllCitiesResponse>

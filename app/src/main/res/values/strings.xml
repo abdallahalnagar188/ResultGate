@@ -62,7 +62,7 @@
     <string name="latest_products">LATEST PRODUCTS</string>
     <string name="all_products">All PRODUCTS</string>
     <string name="categories">CATEGORIES</string>
-    <string name="bn_categories">Categories</string>
+    <string name="bn_categories">Devises</string>
     <string name="brands">BRANDS</string>
     <string name="stores">Vendors</string>
     <string name="stores_bn">Stores</string>
@@ -380,6 +380,8 @@
     <string name="reply">Reply:</string>
     <string name="this_account_has_a_deletion_request_if_you_need_help_about_your_account_your_are_welcome_for_contact_us">This account has a deletion request, If you need help about your account your are welcome for contact us.</string>
     <string name="details">Details</string>
+    <string name="your_account_created_successfly_please_wait_to_confirm_it">Your Account created successfully, please wait to confirm it.</string>
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     <string name="loading">Loading..</string>
@@ -442,14 +444,27 @@
     <string name="join_team">Join Team</string>
     <string name="completedd">Completed</string>
     <string name="per_gram">per gram</string>
-    <string name="become_a_vendor">Become A Vendor</string>
+    <string name="become_a_vendor">Dashboard</string>
     <string name="please_fill_all_fields_correctly">Please fill all fields correctly</string>
     <string name="yourjob">Your job</string>
+    <string name="job_location">Job location</string>
+    <string name="researsher_intersted">Research interest</string>
+    <string name="acadmey">Academic degree</string>
+    <string name="vendor_type">researcher or suppliers or vendor</string>
+    <string name="researshers">researchers</string>
+    <string name="suppliers">suppliers</string>
+    <string name="vendor">vendor</string>
 
     <string-array name="type_array">
         <item>"type"</item>
         <item>"suppliers"</item>
         <item>"researchers"</item>
         <item>"vendor"</item>
+    </string-array>
+
+    <string-array name="spinner_items">
+        <item>Researcher</item>
+        <item>Vendor</item>
+        <item>Sublayer</item>
     </string-array>
 </resources>

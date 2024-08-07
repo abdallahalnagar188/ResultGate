@@ -22,5 +22,12 @@ data class SignUpModel(
     val regionId: Int,
     val regionTitle: String,
 
-    val responseMessage:String
+    val responseMessage:String,
+
+    val job:String,
+    val jobLocation:String,
+    val academicDegree:String,
+    val vendorType:String,
+    val researchInterests:String,
+    
 )

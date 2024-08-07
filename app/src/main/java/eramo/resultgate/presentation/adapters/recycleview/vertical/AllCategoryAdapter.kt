@@ -22,6 +22,7 @@ class AllCategoryAdapter @Inject constructor() :
         getItem(position).let { holder.bind(it) }
     }
 
+
     inner class ProductViewHolder(private val binding: ItemAllcategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
 

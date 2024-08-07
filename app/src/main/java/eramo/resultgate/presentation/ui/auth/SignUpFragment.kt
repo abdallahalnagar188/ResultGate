@@ -2,6 +2,7 @@ package eramo.resultgate.presentation.ui.auth
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
@@ -12,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContract
@@ -61,6 +63,7 @@ class SignUpFragment : Fragment(R.layout.fragment_signup), View.OnClickListener 
     private var regionId = -1
     private var subRegionId = -1
     private var gender = ""
+    private var vendorType = ""
 
     private val activityResultContract = object : ActivityResultContract<Any, Uri?>() {
         override fun createIntent(context: Context, input: Any): Intent {
@@ -77,7 +80,7 @@ class SignUpFragment : Fragment(R.layout.fragment_signup), View.OnClickListener 
         }
     }
 
-    val startForProfileImageResult =
+    private val startForProfileImageResult =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
             val resultCode = result.resultCode
             val data = result.data
@@ -112,6 +115,7 @@ class SignUpFragment : Fragment(R.layout.fragment_signup), View.OnClickListener 
         // Views
         setupSpinners()
         setupGenderRadioGroup()
+        setupVendorTypeRadioGroup()
 
         activityResultLauncher = registerForActivityResult(activityResultContract) {
             it?.let { uri ->
@@ -121,7 +125,23 @@ class SignUpFragment : Fragment(R.layout.fragment_signup), View.OnClickListener 
                 }
             }
         }
-
+        val adapter = ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.type_array,
+            android.R.layout.simple_spinner_item
+        )
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+//        binding.spinner.adapter = adapter
+//        binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+//            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+//                val selectedRole = parent.getItemAtPosition(position).toString()
+//
+//            }
+//
+//            override fun onNothingSelected(parent: AdapterView<*>) {
+//                // Handle the case where nothing is selected if needed
+//            }
+//        }
 
         binding.apply {
             signUpTvLogin.setOnClickListener(this@SignUpFragment)
@@ -156,6 +176,7 @@ class SignUpFragment : Fragment(R.layout.fragment_signup), View.OnClickListener 
         setupSpinners()
     }
 
+
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.signUp_tv_login -> findNavController().popBackStack()
@@ -172,31 +193,40 @@ class SignUpFragment : Fragment(R.layout.fragment_signup), View.OnClickListener 
                         startForProfileImageResult.launch(intent)
                     }
             }
-
             R.id.signUp_btn_signUp -> {
                 binding.apply {
-                    if (!signUpCbAgree.isChecked)
-                        showToast(getString(R.string.txt_accept_privacy_first))
-                    else {
-                        viewModel.validateAndSignup(
-                            signupEtFirstName.text.toString().trim(),
-                            signupEtLastName.text.toString().trim(),
-                            signupEtEmail.text.toString().trim(),
-                            signupEtPassword.text.toString().trim(),
-                            signupEtRePassword.text.toString().trim(),
-                            signupEtPhone.text.toString().trim(),
-                            signupEtAddress.text.toString().trim(),
-                            signupEtBirthDate.text.toString().trim(),
-                            gender,
-                            countryId,
-                            cityId,
-                            regionId,
-                            subRegionId,
-                            profileUri,
-                        )
+                    if (vendorType == "researchers") {
+                        if (!signUpCbAgree.isChecked) {
+                            showToast(getString(R.string.txt_accept_privacy_first))
+                        } else {
+                            viewModel.validateAndSignup(
+                                signupEtFirstName.text.toString().trim(),
+                                signupEtLastName.text.toString().trim(),
+                                signupEtEmail.text.toString().trim(),
+                                signupEtPassword.text.toString().trim(),
+                                signupEtRePassword.text.toString().trim(),
+                                signupEtPhone.text.toString().trim(),
+                                signupEtAddress.text.toString().trim(),
+                                signupEtBirthDate.text.toString().trim(),
+                                gender,
+                                countryId,
+                                cityId,
+                                regionId,
+                                subRegionId,
+                                profileUri,
+                                signupEtJob.text.toString().trim(),
+                                signupEtJobLocation.text.toString().trim(),
+                                vendorType,
+                                signupEtAcadimy.text.toString().trim(),
+                                signupEtResearch.text.toString().trim()
+                            )
+                        }
+                    } else {
+                        showConfirmationDialog()
                     }
                 }
             }
+
 
             R.id.signup_et_birthDate -> {
                 setupDatePickerDialog()
@@ -204,7 +234,21 @@ class SignUpFragment : Fragment(R.layout.fragment_signup), View.OnClickListener 
         }
     }
 
+    private fun showConfirmationDialog() {
+        AlertDialog.Builder(requireContext())
+            .setMessage(getString(R.string.your_account_created_successfly_please_wait_to_confirm_it))
+            .setPositiveButton(android.R.string.ok) { dialog, _ ->
+                findNavController().navigate(R.id.mainFragment)
+                dialog.dismiss()
+            }
+            .setNegativeButton(android.R.string.cancel) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+    }
+
     //-------------------------------------------------------------------------------//
+
     private fun fetchCountriesState() {
         lifecycleScope.launchWhenCreated {
             viewModel.countriesState.collect { state ->
@@ -476,6 +520,13 @@ class SignUpFragment : Fragment(R.layout.fragment_signup), View.OnClickListener 
                     itlAddress.error = null
                     rbMale.error = null
                     rbFemale.error = null
+                    itlJob.error = null
+                    itlJobLocation.error = null
+                    itlAcadimy.error = null
+                    itlResearch.error = null
+                    rbResearcher.error =null
+                    rbSuppliers.error = null
+                    rbVendor.error = null
 
                     itlFirstName.error = state.storeFirstError?.asString(requireContext())
                     itlLastName.error = state.storeLastError?.asString(requireContext())
@@ -492,6 +543,14 @@ class SignUpFragment : Fragment(R.layout.fragment_signup), View.OnClickListener 
                     itlAddress.error = state.addressError?.asString(requireContext())
                     rbMale.error = state.genderError?.asString(requireContext())
                     rbFemale.error = state.genderError?.asString(requireContext())
+                    itlJob.error = state.jobError?.asString(requireContext())
+                    itlJobLocation.error = state.jobLocationError?.asString(requireContext())
+                    rbResearcher.error = state.vendorTypeError?.asString(requireContext())
+                    rbSuppliers.error = state.vendorTypeError?.asString(requireContext())
+                    rbVendor.error = state.vendorTypeError?.asString(requireContext())
+                    itlAcadimy.error = state.academicDegreeError?.asString(requireContext())
+                    itlResearch.error = state.researchInterestsError?.asString(requireContext())
+
                 }
             }
         }
@@ -602,6 +661,28 @@ class SignUpFragment : Fragment(R.layout.fragment_signup), View.OnClickListener 
                 R.id.rbFemale -> {
                     "female"
                 }
+
+                else -> {
+                    ""
+                }
+            }
+
+        }
+    }
+    private fun setupVendorTypeRadioGroup() {
+        binding.radioGroup2.setOnCheckedChangeListener { _, optionId ->
+            vendorType = when (optionId) {
+                R.id.rbResearcher -> {
+                    "researchers"
+                }
+
+                R.id.rbSuppliers -> {
+                    "suppliers"
+                }
+                R.id.rbVendor -> {
+                    "vendor"
+                }
+
 
                 else -> {
                     ""

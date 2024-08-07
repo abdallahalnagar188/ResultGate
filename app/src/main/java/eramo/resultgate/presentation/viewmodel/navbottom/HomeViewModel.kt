@@ -1,10 +1,13 @@
 package eramo.resultgate.presentation.viewmodel.navbottom
 
 import android.os.CountDownTimer
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import eramo.resultgate.data.local.entity.MyFavouriteEntity
+import eramo.resultgate.data.remote.dto.alldevices.AllDevicesResponse
+import eramo.resultgate.data.remote.dto.alldevices.DataX
 import eramo.resultgate.data.remote.dto.general.Member
 import eramo.resultgate.data.remote.dto.home.HomeBestCategoriesResponse
 import eramo.resultgate.data.remote.dto.home.HomeBootomSectionsResponse
@@ -14,6 +17,7 @@ import eramo.resultgate.data.remote.dto.home.HomePageSliderResponse
 import eramo.resultgate.data.remote.dto.products.AddItemsListToWishListResponse
 import eramo.resultgate.data.remote.dto.products.FavouriteResponse
 import eramo.resultgate.data.remote.dto.products.orders.CartCountResponse
+import eramo.resultgate.data.repository.AllDevicesRepoImpl
 import eramo.resultgate.domain.model.CartProductModel
 import eramo.resultgate.domain.model.OffersModel
 import eramo.resultgate.domain.model.ResultModel
@@ -26,6 +30,7 @@ import eramo.resultgate.domain.repository.ProductsRepository
 import eramo.resultgate.domain.usecase.drawer.UpdateFirebaseDeviceTokenUseCase
 import eramo.resultgate.domain.usecase.drawer.myaccount.GetProfileUseCase
 import eramo.resultgate.domain.usecase.product.AddFavouriteUseCase
+import eramo.resultgate.domain.usecase.product.GetAllDevices
 import eramo.resultgate.domain.usecase.product.HomeDealsByUserIdUseCase
 import eramo.resultgate.domain.usecase.product.HomeFeaturedByUserIdUseCase
 import eramo.resultgate.domain.usecase.product.HomeGetCategoriesUseCase
@@ -65,6 +70,7 @@ class HomeViewModel @Inject constructor(
     private val homeOffersUseCase: HomeOffersUseCase,
     private val productsRepository: ProductsRepository,
     private val cartRepository: CartRepository,
+    private val allDevicesUseCase:GetAllDevices,
 ) : ViewModel() {
 
     private val _latestDealsState = MutableStateFlow<UiState<List<MyProductModel>>>(UiState.Empty())
@@ -130,6 +136,9 @@ class HomeViewModel @Inject constructor(
     private val _homeOffersState = MutableStateFlow<UiState<List<OffersModel>>>(UiState.Empty())
     val homeOffersState: StateFlow<UiState<List<OffersModel>>> = _homeOffersState
 
+    private val _allDevices: MutableStateFlow<AllDevicesResponse?> = MutableStateFlow(null)
+    val allDevices: StateFlow<AllDevicesResponse?> get() = _allDevices
+
     private val _cartCountState = MutableStateFlow<UiState<CartCountResponse>>(UiState.Empty())
     val cartCountState: StateFlow<UiState<CartCountResponse>> = _cartCountState
 
@@ -184,6 +193,18 @@ class HomeViewModel @Inject constructor(
     private var bottomSectionsJob: Job? = null
     private var bestCategoriesJob: Job? = null
 
+
+    fun getAllDevices() {
+        viewModelScope.launch {
+            try {
+                _allDevices.value = allDevicesUseCase()
+                Log.e("success", _allDevices.value.toString())
+
+            } catch (e: Exception) {
+                Log.e("failed", e.message.toString())
+            }
+        }
+    }
 
     fun cancelRequest() {
         latestDealsJob?.cancel()

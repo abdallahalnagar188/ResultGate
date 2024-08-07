@@ -612,7 +612,7 @@ class ShopFragment : Fragment(R.layout.fragment_shop),
 
     override fun onFavouriteClick(position: Int, model: ShopProductModel, isFav: Boolean) {
         super.onFavouriteClick(position, model, isFav)
-        if (!UserUtil.isUserLogin()) {
+        if (UserUtil.isUserLogin()) {
 
             viewModel.addRemoveItemWishlistDB(
                 MyFavouriteEntity(
@@ -627,14 +627,16 @@ class ShopFragment : Fragment(R.layout.fragment_shop),
                     profitPercent = model.profitPercent
                 )
             )
+            viewModel.addRemoveItemWishlist(model.id.toString())
+            if (isFav) viewModel.removeFavourite(model.id.toString())
+            else viewModel.addFavourite(model.id.toString())
         }
-        //findNavController().navigate(R.id.loginDialog)
 
         else {
-//            if (isFav) viewModel.removeFavourite(model.id.toString())
-//            else viewModel.addFavourite(model.id.toString())
-//            recyclerViewState = binding.FShopRvProducts.layoutManager?.onSaveInstanceState()
-            viewModel.addRemoveItemWishlist(model.id.toString())
+            findNavController().navigate(R.id.loginDialog)
+
+ //           recyclerViewState = binding.FShopRvProducts.layoutManager?.onSaveInstanceState()
+
         }
     }
 
