@@ -1,7 +1,5 @@
 package eramo.resultgate.presentation.ui.navbottom.extension
 
-import android.R.attr.phoneNumber
-import android.R.id.message
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Color

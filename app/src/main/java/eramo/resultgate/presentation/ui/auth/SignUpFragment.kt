@@ -607,6 +607,11 @@ class SignUpFragment : Fragment(R.layout.fragment_signup), View.OnClickListener 
             signupInRegion.spinnerIcon.setImageResource(R.drawable.ic_location)
             signupInSubRegion.spinnerIcon.setImageResource(R.drawable.ic_location)
 
+            signupInCountry.spinner.adapter = Constants.createSpinnerAdapter(
+                requireContext(),
+                listOf(StringWithTag(getString(R.string.txt_country), 1))
+            )
+
             signupInCity.spinner.adapter = Constants.createSpinnerAdapter(
                 requireContext(),
                 listOf(StringWithTag(getString(R.string.txt_city), 1))
